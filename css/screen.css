@@ -1,0 +1,177 @@
+/* == Imports == */
+@import url("reset.css");
+
+/* == Generic == */
+body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
+
+	/* -- Headings -- */
+	h1 {}
+	h2 {}
+	h3 {}
+	h4 {}
+	h5 {}
+	h6 {}
+
+	/* -- Misc Block elements -- */
+	p {}
+	ul {}
+	ol {}
+	dl {}
+	li {}
+	
+	/* -- Misc Inline elements -- */
+	img {}
+	
+	em {font-style:italic;}
+	strong {font-weight:bold;}
+
+	/* -- Links -- */
+	a:link {}
+	a:visited {}
+	a:hover {}
+	a:active {}
+	
+	.view-items-link {}
+
+	/* -- Misc Classes */
+	.browse {} /* items/browse */
+	.image {} /* items/browse  */
+	
+	.description {}
+	
+	.even {}
+	.odd {}
+	
+	.show {}
+	
+		/* Navigation Classes*/
+		.navigation {}
+		
+		/* Pagination Classes */
+		.pagination {} 
+		
+		.next {} 
+		.previous {} 
+	
+		/* Items Classes*/
+		.browse-items-link {}
+		
+		.featured {}
+		
+		.field {}
+		.field-value {}
+		
+		.item {}
+		.item-description {}
+		.item-img {}
+		.items-list {}
+		.item-meta
+		.items-nav
+		.item-pagination {}
+		.item-tags {}
+		.item-thumbnail {}
+		.item-title {}	
+		
+	
+		/* Collections Classes */
+		.collection {}
+		.collection-description {}
+	
+		/* Exhibits Classes */
+		.exhibit {}
+		.exhibit-description {}
+		.exhibit-tags {}
+	
+		/* Microformats Classes */
+		.hentry {}
+		
+		/* Tags Classes */
+		.tags {}
+
+		/* Tag Clouds */
+		.hTagcloud ul {list-style:none; margin-left:0; padding-left:0;}
+			.hTagcloud li {display:inline;}
+
+			.popular a {font-size:120%;}
+			.v-popular a {font-size:140%;}
+			.vv-popular a {font-size:180%;}
+			.vvv-popular a {font-size:220%;}
+			.vvvv-popular a {font-size:260%;}
+			.vvvvv-popular a {font-size:300%;}
+			.vvvvvv-popular a {font-size:320%;}
+			.vvvvvvv-popular a {font-size:340%;}
+			.vvvvvvvv-popular a {font-size:360%;}
+
+
+/* == Wrap == */
+#wrap {}
+
+/* == Header == */
+#header {}
+	#search {}
+
+/* == Content == */
+
+	/* Structure */
+	#content {}
+		#primary {}
+		#secondary {}
+		
+	/* General */
+	#featured-item {}
+	#recent-items {}
+	
+	#featured-exhibit {}
+	
+	#pagination-top {}
+	#pagination-bottom {}
+		
+	/* Navigation */
+	#primary-nav {}
+	#secondary-nav {}
+	
+		
+	/* Home Page */
+	#featured-collection {}
+
+
+	/* Items Pages */
+	#extended-metadata {}
+		#item-type {}
+
+	#item-metadata {}
+		#item-publisher {}
+		#item-creator {}
+		#item-description {}
+		#item-relation {}
+		#item-spatial-coverage {}
+		#item-rights {}
+		#item-source {}
+		#item-subject {}
+		#item-additional-creator {}
+		#item-format {}
+		#item-contributor {}
+		#item-rights-holder {}
+		#item-provenance {}
+		#item-date {}
+		#item-temporal-coverage {}
+		#item-date-added {}
+		#item-collection {}
+		#item-files {}
+		#item-tags {}
+		#item-citation {}
+		
+	#next-item {}
+	#previous-item {}
+
+	/* Exhibits Pages */
+	#exhibits {}
+	#exhibit-nav {}
+
+	/* Collections Pages */
+	#collection-description {}
+	#collectors {}
+
+
+/* == Footer == */
+#footer {}
