@@ -7,9 +7,9 @@ if (function_exists('COinS')):
 endif;
 ?>
 
-
 <div id="primary">
-		<h2><?php if($item->title) echo h($item->title); else echo 'Untitled'; ?></h2>
+	
+	<h2><?php if($item->title) echo h($item->title); else echo 'Untitled'; ?></h2>
 	
 <!--  The following is extended metadata that is assigned based on the Type that is assigned to an item -->
 	
@@ -192,4 +192,5 @@ endif;
 	</ul>
 	
 </div><!-- end primary -->
+
 <?php foot(); ?>

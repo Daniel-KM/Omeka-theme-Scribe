@@ -17,7 +17,7 @@
 		</div><!--end featured-item-->	
 		
 		<div id="recent-items">
-		<h2>Recently Added</h2>
+			<h2>Recently Added</h2>
 			<?php $recent = recent_items(10); ?>
 			<?php if(!empty($recent)): // Loop through the 10 most recently added items ?>
 			<div class="items-list">
