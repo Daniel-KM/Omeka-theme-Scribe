@@ -140,7 +140,7 @@ endif;
 	        <div id="item-temporal-coverage" class="field">
             <h3>Temporal Coverage</h3>
             <div class="field-value">
-                <?php echo date('m.d.Y', strtotime($item->temporal_coverage_start)); ?>&ndash;<?php echo date('m.d.Y', strtotime($item->temporal_coverage_end)); ?></div>
+                <p><?php echo date('m.d.Y', strtotime($item->temporal_coverage_start)); ?>&ndash;<?php echo date('m.d.Y', strtotime($item->temporal_coverage_end)); ?></p></div>
             </div>
 	    <?php endif; ?>
 	    
