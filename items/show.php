@@ -17,7 +17,7 @@ endif;
 	    <?php if(has_type($item)): ?>
 	        <div id="item-type" class="field">
             <h3>Item Type</h3>
-            <div class="field-value"><?php echo h($item->Type->name); ?></div>
+            <div class="field-value"><?php echo nls2p(h($item->Type->name)); ?></div>
             </div>
             
             <!-- This loop outputs all of the extended metadata -->
