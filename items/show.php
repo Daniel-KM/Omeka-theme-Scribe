@@ -159,9 +159,9 @@ endif;
 	</div><!-- end item-metadata (Dublin Core metadata) -->
 	
 	<?php if(count($item->Files)): ?>
-	<div id="item-files">
+	<div id="item-files" class="field">
 		<h3>Files</h3>
-		<?php echo display_files($item->Files); ?>
+		<div class="field-value"><?php echo display_files($item->Files); ?></div>
 	</div>
 	<?php endif; ?>
 
