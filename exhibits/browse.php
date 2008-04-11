@@ -1,4 +1,4 @@
-<?php head(array('title'=>'Browse Exhibits')); ?>
+<?php head(array('title'=>'Browse Exhibits','bodyid'=>'exhibits','bodyclass' => 'browse')); ?>
 
 <script type="text/javascript" charset="utf-8">
 //<![CDATA[
@@ -22,8 +22,6 @@
 	<ul class="navigation" id="secondary-nav">
 	    <?php echo nav(array('Browse All' => uri('exhibits'), 'Browse by Tag' => uri('exhibits/tags'))); ?>
     </ul>	
-	
-	<div id="exhibits">
 		
 		<?php foreach( $exhibits as $key=>$exhibit ): ?>
 		<div class="exhibit <?php if($key%2==1) echo ' even'; else echo ' odd'; ?>">
@@ -37,7 +35,7 @@
 		<p>You have no exhibits. Please add some in the admin.</p>
 		<?php endif; ?>
 		
-	</div><!-- end exhibits -->
+
 		
 </div><!-- end primary -->
 

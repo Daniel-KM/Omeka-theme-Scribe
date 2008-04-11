@@ -131,7 +131,7 @@ endif;
 	    
 	    <?php if($item->date): ?>
 	        <div id="item-date" class="field">
-            <h3>Provenance</h3>
+            <h3>Date</h3>
             <div class="field-value"><?php echo nls2p(date('m.d.Y', strtotime($item->date))); ?></div>
             </div>
 	    <?php endif; ?>
@@ -168,12 +168,14 @@ endif;
 	<?php if(count($item->Tags)): ?>
 		<?php $tagcount = count($item->Tags); ?>
 	<div id="item-tags" class="field">
-		<h3>Tags:</h3>
+		<h3>Tags</h3>
+		<div class="field-value">
 		<ul class="tags">
 		<?php foreach ($item->Tags as $key=>$tag): ?>
 			<li><a href="<?php echo uri('items/browse/tag/'.urlencode($tag->name)); ?>" rel="tag"><?php echo h($tag->name); ?></a><?php if($tagcount > 1 && $key != $tagcount -1) echo ', '; ?></li>
 		<?php endforeach; ?>
 		</ul>
+		</div>
 	</div>
 	<?php endif;?>
 	

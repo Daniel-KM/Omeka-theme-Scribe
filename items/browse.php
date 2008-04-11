@@ -7,7 +7,9 @@ if (function_exists('COinSMultiple')):
 endif;
 ?>
 
-	<div id="primary" class="browse">
+	<div id="primary">
+		
+		<?php if ( total_results() ): ?>
 		
 		<h2>Browse Items</h2>
 		
@@ -45,6 +47,12 @@ endif;
 				</div><!-- end class="item-meta" -->
 			</div><!-- end class="item hentry" -->
 		<?php endforeach; ?>
+		
+		<?php else: ?>
+			<h2>The query searched <?php total_items(); ?> items and returned no results.</h2>
+
+			<?php items_search_form(array('id'=>'search'), uri('items/browse')); ?>
+		<?php endif; ?>
 	
 		<div id="pagination-bottom" class="pagination"><?php echo pagination_links(); ?></div>
 			

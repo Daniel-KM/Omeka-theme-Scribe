@@ -1,4 +1,4 @@
-<?php head(array('title'=>'Browse Exhibits by Tag')); ?>
+<?php head(array('title'=>'Browse Exhibits by Tag','bodyid'=>'exhibits','bodyclass' => 'tags')); ?>
 
 <div id="primary">
 

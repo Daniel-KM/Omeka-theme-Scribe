@@ -32,17 +32,22 @@ body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
 	a:active {}
 	
 	.view-items-link {}
-
+	
+	/* -- Body Classes -- */
+	.browse {}
+	.item {}
+	.show {}
+	.summary {}
+	.tags {}
+	
 	/* -- Misc Classes */
-	.browse {} /* items/browse */
+
 	.image {} /* items/browse  */
 	
 	.description {}
 	
 	.even {}
 	.odd {}
-	
-	.show {}
 	
 		/* Navigation Classes*/
 		.navigation {}
@@ -84,6 +89,9 @@ body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
 	
 		/* Microformats Classes */
 		.hentry {}
+		
+		/* Search Classes */
+		.no-results {}
 		
 		/* Tags Classes */
 		.tags {}
@@ -163,9 +171,13 @@ body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
 		
 	#next-item {}
 	#previous-item {}
+	
+		/* Search Results */
+		#advanced_search_header {}
+		#primary #basic_search_header {}
+		#primary #submit_search {}
 
 	/* Exhibits Pages */
-	#exhibits {}
 	#exhibit-nav {}
 
 	/* Collections Pages */

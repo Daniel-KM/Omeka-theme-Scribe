@@ -1,4 +1,4 @@
-<?php head(array('title'=>'Summary of ' . h($exhibit->title))); ?>
+<?php head(array('title'=>'Summary of ' . h($exhibit->title),'bodyid'=>'exhibits','bodyclass' => 'summary')); ?>
 
 <div id="primary">
 

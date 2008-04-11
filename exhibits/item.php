@@ -1,4 +1,4 @@
-<?php head(array('title'=>"Item #{$item->id}")); ?>
+<?php head(array('title'=>"Item #{$item->id}",'bodyid'=>'exhibits','bodyclass' => 'item')); ?>
 
 <div id="primary">
 

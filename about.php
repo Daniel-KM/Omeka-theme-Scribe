@@ -1,4 +1,4 @@
-<?php head(array('title'=>'About')); ?>
+<?php head(array('title'=>'About','bodyid'=>'about')); ?>
 
 <div id="primary">
 	

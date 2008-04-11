@@ -1,15 +1,15 @@
-<?php head(array('title'=>h($collection->name))); ?>
+<?php head(array('title'=>h($collection->name),'bodyid'=>'collections','bodyclass' => 'show')); ?>
 
 <div id="primary" class="show">
     <h2><?php echo h($collection->name); ?></h2>
 
     <div id="collection-description" class="field">
-    <h2>Description</h2>
+    <h3>Description</h3>
     <div class="field-value"><?php echo nls2p(h($collection->description)); ?></div>
     </div>
     
     <div id="collectors" class="field">
-    <h2>Collector(s)</h2> 
+    <h3>Collector(s)</h3> 
         <div class="field-value">
             <ul><?php foreach($collection->Collectors as $collector):?>
                 <li><?php echo h($collector->name); ?></li>

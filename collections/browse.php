@@ -1,4 +1,4 @@
-<?php head(array('title'=>'Browse Collections')); ?>
+<?php head(array('title'=>'Browse Collections','bodyid'=>'collections','bodyclass' => 'browse')); ?>
 <div id="primary">
 	<h2>Collections</h2>
 
