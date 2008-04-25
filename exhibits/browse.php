@@ -27,7 +27,7 @@
 		<div class="exhibit <?php if($key%2==1) echo ' even'; else echo ' odd'; ?>">
 		<h3><?php echo link_to_exhibit($exhibit); ?></h3>
 		<div class="description"><?php echo nls2p($exhibit->description); ?></div>
-		<p class="tags"><?php echo tag_string($exhibit, uri('exhibits/browse/tag/')); ?></p>
+		<p class="tags"><strong>Tags:</strong><?php echo tag_string($exhibit, uri('exhibits/browse/tag/')); ?></p>
 		</div>
 		<?php endforeach; ?>
 

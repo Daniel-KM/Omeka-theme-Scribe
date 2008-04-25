@@ -12,13 +12,13 @@
     <h3>Collector(s)</h3> 
         <div class="field-value">
             <ul><?php foreach($collection->Collectors as $collector):?>
-                <li><?php echo h($collector->name); ?></li>
+                <li><?php echo nls2p(h($collector->name)); ?></li>
                 <?php endforeach; ?>
             </ul>
         </div>
     </div>
 
-    <p><a href="<?php echo uri('items/browse/', array('collection'=>$collection->id)); ?>">View the items in &quot;<?php echo h($collection->name); ?>&quot;</a></p>
+    <p><a class="view-items-link href="<?php echo uri('items/browse/', array('collection'=>$collection->id)); ?>">View the items in &quot;<?php echo h($collection->name); ?>&quot;</a></p>
 
 </div><!-- end primary -->
 

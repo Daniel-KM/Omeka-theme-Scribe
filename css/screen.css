@@ -179,11 +179,13 @@ body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
 
 	/* Exhibits Pages */
 	#exhibit-nav {}
+	#exhibit-summary {}
+	#exhibit-show {}
 
 	/* Collections Pages */
 	#collection-description {}
 	#collectors {}
-
+	
 
 /* == Footer == */
 #footer {}

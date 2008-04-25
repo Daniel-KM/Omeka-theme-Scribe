@@ -5,7 +5,7 @@
 	<?php echo nav(array('About' => uri('about'), 'Items' => uri('items'), 'Exhibits' => uri('exhibits'), 'Collections'=>uri('collections'))); ?>
 	</ul>
 	
-	<p>Powered by <a href="http://omeka.org">Omeka</a>.</p>
+	<p>Proudly powered by <a href="http://omeka.org">Omeka</a>.</p>
 	
 	</div><!-- end footer -->
 </div><!-- end wrap -->

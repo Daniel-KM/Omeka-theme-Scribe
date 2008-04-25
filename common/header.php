@@ -14,6 +14,8 @@
 <link rel="stylesheet" media="screen" href="<?php echo css('screen'); ?>" />
 <link rel="stylesheet" media="print" href="<?php echo css('print'); ?>" />
 
+<?php if ($bodyid=='exhibits'): ?><link rel="stylesheet" media="screen" href="<?php echo layout_css('layout'); ?>" /><?php endif; ?>
+
 <!-- JavaScripts -->
 <?php echo js('default'); ?>
 

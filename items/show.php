@@ -152,7 +152,7 @@ endif;
 	    <?php if ( has_collection($item) ): ?>
     	    <div id="item-collection" class="field">
             <h3>Collection</h3>
-            <div class="field-value"><?php echo nls2p(h($item->Collection->name)); ?></div>
+            <div class="field-value"><?php echo link_to_collection($item->Collection); ?> </div>
             </div>
     	<?php endif; ?>
 	
