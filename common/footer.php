@@ -9,5 +9,8 @@
 	
 	</div><!-- end footer -->
 </div><!-- end wrap -->
+
+<?php echo plugin_footer(); ?> 
+
 </body>
 </html>
