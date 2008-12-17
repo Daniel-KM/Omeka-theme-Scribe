@@ -2,7 +2,7 @@
 @import url("reset.css");
 
 /* == Generic == */
-body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
+body {}
 
 	/* -- Headings -- */
 	h1 {}
@@ -63,8 +63,8 @@ body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
 		
 		.featured {}
 		
-		.field {}
-		.field-value {}
+		.element {}
+		.element-text {}
 		
 		.item {}
 		.item-description {}
@@ -97,18 +97,18 @@ body {font:62.5% Verdana, Arial, sans-serif; background-color:#fff;}
 		.tags {}
 
 		/* Tag Clouds */
-		.hTagcloud ul {list-style:none; margin-left:0; padding-left:0;}
-			.hTagcloud li {display:inline;}
+		.hTagcloud ul {}
+			.hTagcloud li {}
 
-			.popular a {font-size:120%;}
-			.v-popular a {font-size:140%;}
-			.vv-popular a {font-size:180%;}
-			.vvv-popular a {font-size:220%;}
-			.vvvv-popular a {font-size:260%;}
-			.vvvvv-popular a {font-size:300%;}
-			.vvvvvv-popular a {font-size:320%;}
-			.vvvvvvv-popular a {font-size:340%;}
-			.vvvvvvvv-popular a {font-size:360%;}
+			.popular a {}
+			.v-popular a {}
+			.vv-popular a {}
+			.vvv-popular a {}
+			.vvvv-popular a {}
+			.vvvvv-popular a {}
+			.vvvvvv-popular a {}
+			.vvvvvvv-popular a {}
+			.vvvvvvvv-popular a {}
 
 
 /* == Wrap == */

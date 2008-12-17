@@ -2,7 +2,8 @@
 	<div id="footer">
 		
 	<ul class="navigation">
-	<?php echo nav(array('About' => uri('about'), 'Items' => uri('items'), 'Exhibits' => uri('exhibits'), 'Collections'=>uri('collections'))); ?>
+        <?php echo public_nav_main(array('Home' => uri(''), 'Browse Items' => uri('items'), 'Browse Collections'=>uri('collections')));
+    	?>
 	</ul>
 	
 	<p>Proudly powered by <a href="http://omeka.org">Omeka</a>.</p>

@@ -14,8 +14,6 @@
 <link rel="stylesheet" media="screen" href="<?php echo css('screen'); ?>" />
 <link rel="stylesheet" media="print" href="<?php echo css('print'); ?>" />
 
-<?php if ($bodyid=='exhibits'): ?><link rel="stylesheet" media="screen" href="<?php echo layout_css('layout'); ?>" /><?php endif; ?>
-
 <!-- JavaScripts -->
 <?php echo js('default'); ?>
 
@@ -24,18 +22,25 @@
 
 </head>
 <body<?php echo $bodyid ? ' id="'.$bodyid.'"' : ''; ?><?php echo $bodyclass ? ' class="'.$bodyclass.'"' : ''; ?>>
-	<div id="wrap">
 
-		<div id="header">
-			<h1><a href="<?php echo uri(''); ?>"><?php echo settings('site_title'); ?></a></h1>
-		</div><!-- end header -->
+<div id="wrap">
+
+	<div id="header">
+	    
+		<div id="site-title"><?php echo link_to_home_page(); ?></div>
+	
 		<div id="search">
 		    <h2>Search</h2>
-		    <?php echo simple_search(array('id'=>'simple-search'),uri('items/browse')); ?>
+			<?php echo simple_search(); ?>
+			<?php echo link_to_advanced_search(); ?>
 		</div><!-- end search -->
-		<div id="primary-nav">
-			<ul class="navigation">
-			    <?php echo nav(array('About' => uri('about'), 'Items' => uri('items'), 'Exhibits' => uri('exhibits'), 'Collections'=>uri('collections'))); ?>
-			</ul>
-		</div><!-- end primary-nav -->
-		<div id="content">
+		
+	</div><!-- end header -->
+	
+	<div id="primary-nav">
+		<ul class="navigation">
+		<?php echo public_nav_main(array('Browse Items' => uri('items'), 'Browse Collections'=>uri('collections'))); ?>
+		</ul>
+	</div><!-- end primary-nav -->
+
+<div id="content">
