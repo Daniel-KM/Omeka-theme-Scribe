@@ -1,7 +1,7 @@
 <?php head(array('title'=>'Browse Collections','bodyid'=>'collections','bodyclass' => 'browse')); ?>
 <div id="primary">
 	<h1>Collections</h1>
-
+    <div class="pagination"><?php echo pagination_links(); ?></div>
 		<?php while (loop_collections()): ?>
 			<div class="collection">
 			    
