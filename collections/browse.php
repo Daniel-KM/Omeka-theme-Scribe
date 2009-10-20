@@ -14,7 +14,7 @@
 	            
             	<div class="element">
                 <h3>Collector(s)</h3>
-                <?php if(collection_has_collectors()): ?>
+                <?php if (collection_has_collectors()): ?>
             	    <div class="element-text">
                     <p><?php echo collection('Collectors', array('delimiter'=>', ')); ?></p>
             	    </div>

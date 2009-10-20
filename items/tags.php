@@ -8,7 +8,7 @@
 	<?php echo nav(array('Browse All' => uri('items/browse'), 'Browse by Tag' => uri('items/tags'))); ?>
 	</ul>
 
-	<?php echo tag_cloud($tags,uri('items/browse')); ?>
+	<?php echo tag_cloud($tags, uri('items/browse')); ?>
 
 </div><!-- end primary -->
 

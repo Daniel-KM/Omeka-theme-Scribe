@@ -29,13 +29,13 @@
 			    
 				<h3><?php echo link_to_item(); ?></h3>
 				
-				<?php if(item_has_thumbnail()): ?>
+				<?php if (item_has_thumbnail()): ?>
     				<div class="item-img">
     				<?php echo link_to_item(item_square_thumbnail()); ?>						
     				</div>
 				<?php endif; ?>
 				
-				<?php if($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
+				<?php if ($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
 				    
 				    <div class="item-description"><?php echo $desc; ?><p><?php echo link_to_item('see more',(array('class'=>'show'))) ?></p></div>
 				
@@ -50,7 +50,7 @@
 			
 		<?php endif; ?>
 		
-		<p class="view-items-link"><a href="<?php echo uri('items'); ?>">View All Items</a></p>
+		<p class="view-items-link"><a href="<?php echo html_escape(uri('items')); ?>">View All Items</a></p>
 		
 	</div><!--end recent-items -->
 		

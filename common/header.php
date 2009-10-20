@@ -11,8 +11,8 @@
 <?php echo auto_discovery_link_tag(); ?>
 
 <!-- Stylesheets -->
-<link rel="stylesheet" media="screen" href="<?php echo css('screen'); ?>" />
-<link rel="stylesheet" media="print" href="<?php echo css('print'); ?>" />
+<link rel="stylesheet" media="screen" href="<?php echo html_escape(css('screen')); ?>" />
+<link rel="stylesheet" media="print" href="<?php echo html_escape(css('print')); ?>" />
 
 <!-- JavaScripts -->
 <?php echo js('default'); ?>
@@ -29,7 +29,7 @@
 	    
 		<div id="site-title"><?php echo link_to_home_page(); ?></div>
 	
-		<div id="search">
+		<div id="search-wrap">
 		    <h2>Search</h2>
 			<?php echo simple_search(); ?>
 			<?php echo link_to_advanced_search(); ?>

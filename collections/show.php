@@ -1,7 +1,7 @@
-<?php head(array('title'=>h($collection->name),'bodyid'=>'collections','bodyclass' => 'show')); ?>
+<?php head(array('title' => html_escape($collection->name),'bodyid'=>'collections','bodyclass' => 'show')); ?>
 
 <div id="primary" class="show">
-    <h2><?php echo h($collection->name); ?></h2>
+    <h2><?php echo html_escape($collection->name); ?></h2>
 
     <h1><?php echo collection('Name'); ?></h1>
 

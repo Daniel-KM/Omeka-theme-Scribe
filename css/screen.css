@@ -116,7 +116,7 @@ body {}
 
 /* == Header == */
 #header {}
-	#search {}
+	#search-wrap {}
 
 /* == Content == */
 
@@ -138,10 +138,12 @@ body {}
 	#primary-nav {}
 	#secondary-nav {}
 	
+	/* Advanced Search */
+	#advanced-search-form {}
+	    #submit_search_advanced {}
 		
 	/* Home Page */
 	#featured-collection {}
-
 
 	/* Items Pages */
 	#extended-metadata {}

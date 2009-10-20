@@ -3,9 +3,9 @@
 <div id="primary">
 	
 	<h1><?php echo item('Dublin Core', 'Title'); ?></h1>
-	
+
+    <h3>All Titles</h3>
 	<ul class="title-list">
-	    <h3>All Titles</h3>
         <?php foreach (item('Dublin Core', 'Title', 'all') as $title): ?>
            <li class="item-title">
            <?php echo $title; ?>
@@ -31,7 +31,7 @@
     <?php endif; ?>
 
     <!-- The following prints a list of all tags associated with the item -->
-	<?php if(item_has_tags()): ?>
+	<?php if (item_has_tags()): ?>
 	<div id="item-tags" class="element">
 		<h3>Tags</h3>
 		<div class="element-text"><?php echo item_tags_as_string(); ?></div> 
