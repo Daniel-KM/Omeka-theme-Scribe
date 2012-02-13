@@ -1,46 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="<?php echo get_html_lang(); ?>">
 <head>
-<title><?php echo settings('site_title'); echo $title ? ' | ' . $title : ''; ?></title>
+    <meta charset="utf-8">
+    <?php if ( $description = settings('description')): ?>
+    <meta name="description" content="<?php echo $description; ?>" />
+    <?php endif; ?>
 
-<!-- Meta -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="<?php echo settings('description'); ?>" />
+    <title><?php echo settings('site_title'); echo isset($title) ? ' | ' . strip_formatting($title) : ''; ?></title>
 
-<?php echo auto_discovery_link_tag(); ?>
+    <?php echo auto_discovery_link_tags(); ?>
 
-<!-- Stylesheets -->
-<link rel="stylesheet" media="screen" href="<?php echo html_escape(css('screen')); ?>" />
-<link rel="stylesheet" media="print" href="<?php echo html_escape(css('print')); ?>" />
+    <!-- Plugin Stuff -->
+    <?php plugin_header(); ?>
 
-<!-- JavaScripts -->
-<?php echo js('default'); ?>
+    <!-- Stylesheets -->
+    <?php
+    queue_css('style');
+    display_css();
+    ?>
 
-<!-- Plugin Stuff -->
-<?php echo plugin_header(); ?>
-
+    <!-- JavaScripts -->
+    <?php display_js(); ?>
 </head>
-<body<?php echo $bodyid ? ' id="'.$bodyid.'"' : ''; ?><?php echo $bodyclass ? ' class="'.$bodyclass.'"' : ''; ?>>
 
-<div id="wrap">
+<?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
+    <?php plugin_body(); ?>
+    <div id="wrap">
 
-	<div id="header">
-	    
-		<div id="site-title"><?php echo link_to_home_page(); ?></div>
-	
-		<div id="search-wrap">
-		    <h2>Search</h2>
-			<?php echo simple_search(); ?>
-			<?php echo link_to_advanced_search(); ?>
-		</div><!-- end search -->
-		
-	</div><!-- end header -->
-	
-	<div id="primary-nav">
-		<ul class="navigation">
-		<?php echo public_nav_main(array('Browse Items' => uri('items'), 'Browse Collections'=>uri('collections'))); ?>
-		</ul>
-	</div><!-- end primary-nav -->
+        <div id="header">
+            <?php plugin_page_header(); ?>
+            <div id="search-container">
+                <?php echo simple_search(); ?>
+                <?php echo link_to_advanced_search(); ?>
+            </div><!-- end search -->
 
-<div id="content">
+            <div id="site-title"><?php echo link_to_home_page(custom_display_logo()); ?></div>
+
+        </div><!-- end header -->
+
+        <div id="primary-nav">
+            <ul class="navigation">
+            <?php echo custom_public_nav_header(); ?>
+            </ul>
+        </div><!-- end primary-nav -->
+        <?php echo custom_header_image(); ?>
+
+        <div id="content">
+            <?php plugin_page_content(); ?>

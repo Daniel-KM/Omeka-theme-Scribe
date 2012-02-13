@@ -1,0 +1,240 @@
+/* == Reset == */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* == Generic == */
+body {}
+
+    /* -- Headings -- */
+    h1 {}
+    h2 {}
+    h3 {}
+    h4 {}
+    h5 {}
+    h6 {}
+
+    /* -- Misc Block elements -- */
+    p {}
+    ul {}
+    ol {}
+    dl {}
+    li {}
+
+    /* -- Misc Inline elements -- */
+    img {}
+
+    em {font-style:italic;}
+    strong {font-weight:bold;}
+
+    /* -- Links -- */
+    a:link {}
+    a:visited {}
+    a:hover {}
+    a:active {}
+
+    .view-items-link {}
+
+    /* -- Body Classes -- */
+    .browse {}
+    .item {}
+    .show {}
+    .summary {}
+    .tags {}
+
+    /* -- Misc Classes */
+
+    .image {} /* items/browse  */
+
+    .description {}
+
+    .even {}
+    .odd {}
+
+        /* Navigation Classes*/
+        .navigation {}
+
+        /* Pagination Classes */
+        .pagination {}
+
+        .next {}
+        .previous {}
+
+        /* Items Classes*/
+        .browse-items-link {}
+
+        .featured {}
+
+        .element {}
+        .element-text {}
+
+        .item {}
+        .item-description {}
+        .item-img {}
+        .items-list {}
+        .item-meta
+        .items-nav
+        .item-pagination {}
+        .item-tags {}
+        .item-thumbnail {}
+        .item-title {}
+
+
+        /* Collections Classes */
+        .collection {}
+        .collection-description {}
+
+        /* Exhibits Classes */
+        .exhibit {}
+        .exhibit-description {}
+        .exhibit-tags {}
+
+        /* Microformats Classes */
+        .hentry {}
+
+        /* Search Classes */
+        .no-results {}
+
+        /* Tags Classes */
+        .tags {}
+
+        /* Tag Clouds */
+        .hTagcloud ul {}
+            .hTagcloud li {}
+
+            .popular a {}
+            .v-popular a {}
+            .vv-popular a {}
+            .vvv-popular a {}
+            .vvvv-popular a {}
+            .vvvvv-popular a {}
+            .vvvvvv-popular a {}
+            .vvvvvvv-popular a {}
+            .vvvvvvvv-popular a {}
+
+
+/* == Wrap == */
+#wrap {}
+
+/* == Header == */
+#header {}
+    #search-wrap {}
+
+/* == Content == */
+
+    /* Structure */
+    #content {}
+        #primary {}
+        #secondary {}
+
+    /* General */
+    #featured-item {}
+    #recent-items {}
+
+    #featured-exhibit {}
+
+    #pagination-top {}
+    #pagination-bottom {}
+
+    /* Navigation */
+    #primary-nav {}
+    #secondary-nav {}
+
+    /* Advanced Search */
+    #advanced-search-form {}
+        #submit_search_advanced {}
+
+    /* Home Page */
+    #featured-collection {}
+
+    /* Items Pages */
+    #extended-metadata {}
+        #item-type {}
+
+    #item-metadata {}
+        #item-publisher {}
+        #item-creator {}
+        #item-description {}
+        #item-relation {}
+        #item-spatial-coverage {}
+        #item-rights {}
+        #item-source {}
+        #item-subject {}
+        #item-additional-creator {}
+        #item-format {}
+        #item-contributor {}
+        #item-rights-holder {}
+        #item-provenance {}
+        #item-date {}
+        #item-temporal-coverage {}
+        #item-date-added {}
+        #item-collection {}
+        #item-files {}
+        #item-tags {}
+        #item-citation {}
+
+    #next-item {}
+    #previous-item {}
+
+        /* Search Results */
+        #advanced_search_header {}
+        #primary #basic_search_header {}
+        #primary #submit_search {}
+
+    /* Exhibits Pages */
+    #exhibit-nav {}
+    #exhibit-summary {}
+    #exhibit-show {}
+
+    /* Collections Pages */
+    #collection-description {}
+    #collectors {}
+
+
+/* == Footer == */
+#footer {}

@@ -1,14 +1,17 @@
-<?php head(array('title'=>'Browse Items','bodyid'=>'items','bodyclass'=>'tags')); ?>
+<?php
+$pageTitle = __('Browse Items');
+head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass'=>'tags'));
+?>
 
 <div id="primary">
-	
-	<h1>Browse Items</h1>
-	
-	<ul class="navigation item-tags" id="secondary-nav">
-	<?php echo nav(array('Browse All' => uri('items/browse'), 'Browse by Tag' => uri('items/tags'))); ?>
-	</ul>
 
-	<?php echo tag_cloud($tags, uri('items/browse')); ?>
+    <h1><?php echo $pageTitle; ?></h1>
+
+    <ul class="navigation item-tags" id="secondary-nav">
+        <?php echo custom_nav_items(); ?>
+    </ul>
+
+    <?php echo tag_cloud($tags,uri('items/browse')); ?>
 
 </div><!-- end primary -->
 

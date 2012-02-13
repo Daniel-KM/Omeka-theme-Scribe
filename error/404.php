@@ -1,11 +1,9 @@
-<?php head(array('title'=>'404','bodyid'=>'404')); ?>
-
+<?php
+$pageTitle = __('404 Page Not Found');
+head(array('title'=>$pageTitle));
+?>
 <div id="primary">
-	
-<h2>Oops!</h2>
-	
-	<p>Sorry, this page doesn't exist. Check your URL, or send us a note.</p>
-
-</div><!-- end primary -->
-
+    <h1><?php echo $pageTitle; ?></h1>
+    <p><?php echo __('%s is not a valid URL.', html_escape($badUri)); ?></p>
+</div>
 <?php foot(); ?>
