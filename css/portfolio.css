@@ -1,0 +1,224 @@
+
+/* General Styles */
+
+
+
+
+
+
+.rightline {
+	border-right: 1px solid #F4F4F4;
+	padding-right: 20px;
+}
+
+/* Masthead */
+
+.masthead {
+	margin-bottom: 10px;
+}
+
+.masthead h1 {
+	color: #900;
+}
+
+.masthead .nav {
+	margin-top: 40px;
+}
+
+.masthead .nav li {
+	margin-left: 10px;
+	font-weight: normal;
+	font-family: "Oxygen", sans-serif;
+}
+
+/* Slideshow */
+
+.carousel {
+	margin-bottom: 30px;
+}
+
+.carousel .item {
+	background: #F8F8F8;
+	height: 400px;
+}
+
+.carousel .item p.caption {
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	color: #FFF;
+	font-size: 36px;
+	font-weight: thin;
+	font-family: "Oxygen", sans-serif;
+}
+
+/* Columns */
+
+.home-columns {
+	margin-bottom: 20px;
+}
+
+.home-columns i {
+	font-size: 64px;
+	margin: 15px 20px 60px 0;
+	color: #CCC;
+}
+
+.home-columns h2 {
+	color: #3B3B3B;
+	margin-bottom: 0;
+}
+
+.work-columns,
+.one-column {
+	margin-bottom: 20px;
+}
+
+.services-list {
+	list-style: none;
+	margin: 0;
+}
+
+.services-list li {
+	line-height: 1.8;
+}
+
+/* Contact */
+
+.contact-form {
+	padding-top: 20px;
+	border-top: 1px solid #F4F4F4;
+}
+
+/* Map */
+
+#map_canvas {
+	width: 100%;
+	height: 400px;
+	margin-bottom: 20px;
+}
+
+/* Thumbnails */
+
+.thumbnails li a.thumbnail {
+	border: none;
+	padding: 0;
+	margin-bottom: 14px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	position: relative;
+}
+
+.thumbnails li a.thumbnail img {
+	margin: 0;
+}
+
+.thumbnails li a.thumbnail .caption {
+	display: block;
+	background: #900;
+	padding: 0;
+	width: 270px;
+	height: 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.thumbnails li a.thumbnail:hover .caption {
+	height: 185px;
+	opacity: 0.7;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.thumbnails li a.thumbnail .caption i {
+	display: block;
+	font-size: 40px;
+	color: #FFF;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -20px 0 0 -24px;
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.thumbnails li a.thumbnail:hover .caption i {
+	opacity: 1;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+/* Footer */
+
+.footer {
+	background: #F8F8F8;
+	padding: 30px 0;
+}
+
+.footer h3 {
+	margin-bottom: 10px;
+}
+
+.footer a {
+	color: #888;
+}
+
+.footer a:hover {
+	color: #666;
+}
+
+.footer ul.footer-nav {
+	list-style: none;
+	margin: 0;
+}
+
+.footer ul.footer-nav li {
+	line-height: 2;
+}
+
+/* Carousel items - change these to suit your needs */
+
+.carousel .item1 {
+	background: #3B3B3B;
+}
+
+.carousel .item2 {
+	background: #0fa89e;
+}
+
+.carousel .item3 {
+	background: #a80f0f;
+}
+
+.dropdown-menu .nav-header {
+  display: block;
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
