@@ -30,7 +30,7 @@
         
         ?>
         <ul>
-        <?php while (loop_items_in_collection(5)): 
+        <?php while (loop_items_in_collection(30)): 
         $item = get_current_item();
                
         ?>

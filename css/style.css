@@ -288,3 +288,8 @@ li {
 td img {
     height: 30px;
 }
+
+.thumbnail h4 {
+   font-family: Inconsolata;
+}
+

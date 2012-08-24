@@ -15,6 +15,7 @@
 
     <!-- Le styles -->
     <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
             
     <?php
     queue_css('bootstrap');
@@ -44,7 +45,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="/transcribe/collections/show/7">Szathmary Culinary Manuscripts and Cookbooks</a></li>
                             <li><a href="/transcribe/collections/show/8">Civil War Diaries and Letters</a></li>
-                            <li><a href="/transcribe/collections/show/6">Nile Kinnick Collection</a></li>
+                            <li><a href="/transcribe/collections/show/6">Papers of Nile C. Kinnick</a></li>
 
                         </ul>
                      </li>

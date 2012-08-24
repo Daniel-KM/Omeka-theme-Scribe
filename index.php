@@ -22,7 +22,7 @@
 
     $col1 = $collectionList[0];
     $col1_link = link_to_collection($collectionTitle, array(), 'show', $col1);
-    $col1_items = get_items(array('collection' => $col1['id'])); 
+    $col1_items = get_items(array('collection' => $col1['id']),9000); 
     set_items_for_loop($col1_items);
     $col1_item_list = array();
        
@@ -37,7 +37,7 @@
 
     $col2 = $collectionList[1]; 
     $col2_link = link_to_collection($collectionTitle, array(), 'show', $col2);
-    $col2_items = get_items(array('collection' => $col2['id']));
+    $col2_items = get_items(array('collection' => $col2['id']),9000);
     set_items_for_loop($col2_items);
     $col2_item_list = array();
 
@@ -52,7 +52,7 @@
 
     $col3 = $collectionList[2];
     $col3_link = link_to_collection($collectionTitle, array(), 'show', $col3);
-    $col3_items = get_items(array('collection' => $col3['id']));
+    $col3_items = get_items(array('collection' => $col3['id']),9000);
     set_items_for_loop($col3_items);
     $col3_item_list = array();
 

@@ -28,8 +28,8 @@
             //$output = '';
             echo '<ul class="thumbnails">';
             foreach ($files as $file) {
-                //$status = $scripto->getPageTranscriptionStatus($file->item_id, $file->id);
-                $status = $this->fileMetadata($file, 'Dublin Core', 'Rights'); 
+                $status = $scripto->getPageTranscriptionStatus($file->id);
+                //$status = $this->fileMetadata($file, 'Dublin Core', 'Rights'); 
                 switch ($status) {
                 case 'Completed':
                     $label = "label-success";
@@ -46,9 +46,15 @@
                 } 
 
                  $fileTitle = $this->fileMetadata($file, 'Dublin Core', 'Title');
+                 //using monospaced font to make this work
+                 if (strlen($fileTitle) <= 18) {
+                    $fileTitle .= '<br /><br /><br />';
+                 } elseif (strlen($fileTitle) <= 36 ) {
+                     $fileTitle .= '<br /><br />';
+                 }
                  echo '   <li class="span2">';
                  echo '       <div class="thumbnail">';
-                 echo '           <a href="http://s-lib017.lib.uiowa.edu/transcribe/scripto/transcribe/'.$file->item_id.'/'.$file->id.'"><img src="http://s-lib017.lib.uiowa.edu/omeka/archive/square_thumbnails/' . $file->archive_filename . '" /></a>';
+                 echo '           <a href="http://s-lib017.lib.uiowa.edu/transcribe/scripto/transcribe/'.$file->item_id.'/'.$file->id.'"><img src="http://s-lib017.lib.uiowa.edu/transcribe/archive/square_thumbnails/' . $file->archive_filename . '" /></a>';
                  echo '           <h4>'.$fileTitle.'</h4>';
                  echo '           <span class="label '.$label.'">'.$status.'</span>';
                  echo '       </div>';
