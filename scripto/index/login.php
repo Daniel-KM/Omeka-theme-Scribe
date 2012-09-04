@@ -8,7 +8,7 @@ head($head);
 
 <!-- navigation -->
 
-<p><a href="<?php echo html_escape(uri('scripto/index/recent-changes')); ?>">Recent changes</a></p>
+<p><a href="http://s-lib017.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup&returnto=Main+Page" target="_blank">Create an account</a> | <a href="<?php echo html_escape(uri('scripto/index/recent-changes')); ?>">Recent changes</a></p>
 <p>Jen or someone writes something here to prompt people.</p>
 
 <!-- login -->

@@ -34,7 +34,7 @@
                 case 'Completed':
                     $label = "label-success";
                     break;
-                case 'Partially Transcribed':
+                case 'Needs Review':
                     $label = "label-warning";
                     break;
                 case 'Not Started':

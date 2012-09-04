@@ -293,3 +293,17 @@ td img {
    font-family: Inconsolata;
 }
 
+.list-column {
+    overflow: auto;
+    overflow-x: hidden;
+    height: 500px;
+    width: 30%;
+    float: left;
+    margin: 10px;
+}
+
+.tooltip.in {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+

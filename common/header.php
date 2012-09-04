@@ -20,6 +20,7 @@
     <?php
     queue_css('bootstrap');
     queue_css('font-awesome');
+    queue_css('jScrollPane');
     queue_css('style');
     display_css();
     ?>
@@ -43,6 +44,7 @@
                 
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Collections<b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <li><a href="/transcribe/collections/show/9">Iowa Byington Reed Diaries</a></li>
                             <li><a href="/transcribe/collections/show/7">Szathmary Culinary Manuscripts and Cookbooks</a></li>
                             <li><a href="/transcribe/collections/show/8">Civil War Diaries and Letters</a></li>
                             <li><a href="/transcribe/collections/show/6">Papers of Nile C. Kinnick</a></li>

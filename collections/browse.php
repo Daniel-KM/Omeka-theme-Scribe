@@ -7,6 +7,7 @@ head(array('title'=>$pageTitle,'bodyid'=>'collections','bodyclass' => 'browse'))
     <div class="pagination"><?php echo pagination_links(); ?></div>
 
     <?php while (loop_collections()): ?>
+    <div id="pagination-top" class="pagination"><?php echo pagination_links(); ?></div>
     <div class="collection">
 
         <h2><?php echo link_to_collection(); ?></h2>
@@ -21,6 +22,7 @@ head(array('title'=>$pageTitle,'bodyid'=>'collections','bodyclass' => 'browse'))
             <h3><?php echo __('Collector(s)'); ?></h3>
             <div class="element-text">
                 <p><?php echo collection('Collectors', array('delimiter'=>', ')); ?></p>
+
             </div>
         </div>
         <?php endif; ?>
