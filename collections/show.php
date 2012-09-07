@@ -4,7 +4,6 @@
     <h1><?php echo collection('Name'); ?></h1>
 
     <div id="description" class="element">
-        <h2><?php echo __('Description'); ?></h2>
         <div class="element-text"><?php echo nls2p(collection('Description')); ?></div>
     </div><!-- end description -->
 
@@ -24,13 +23,10 @@
     -->
 
     <div id="collection-items">
-        <h2><?php echo __('Items in the %s Collection', collection('Name')); ?></h2>
-        <?php require_once '/local/vol00/srv/www/htdocs/transcribe/plugins/Scripto/libraries/Scripto.php'; 
-        $scripto = ScriptoPlugin::getScripto();
+        <h2><?php //echo __('Items in the %s Collection', collection('Name')); ?></h2>
         
-        ?>
         <ul>
-        <?php while (loop_items_in_collection(300)): 
+        <?php while (loop_items_in_collection(999)): 
         $item = get_current_item();
                
         ?>
@@ -41,7 +37,13 @@
                     <?php echo link_to_item(item_thumbnail(array('alt'=>item('Dublin Core', 'Title'))),array('class'=>'span2')); ?>
                     <div class="caption">
                         <strong><?php echo link_to_item(item('Dublin Core', 'Title'), array('class'=>'permalink')); ?></strong><br />
-                        <?php echo $scripto->progressBar($item, 'partial'); ?>
+                        <?php   $progress_value = item('Scripto', 'Status');
+                                if ($progress_value == null) {
+                                     $progress_value = 0;
+                                 } else {
+                                    $progress_value = item('Scripto', 'Status');
+                                 }
+                                echo $progress_value . '% transcribed <br /><div class="progress progress-striped"><div class="bar" style="width:'.$progress_value.'%;"></div></div>'; ?>
                     </div>    
                 </div>    
             </li>
