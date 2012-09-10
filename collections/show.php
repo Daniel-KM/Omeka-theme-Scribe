@@ -25,7 +25,7 @@
     <div id="collection-items">
         <h2><?php //echo __('Items in the %s Collection', collection('Name')); ?></h2>
         
-        <ul>
+        <ul class="nobullet">
         <?php while (loop_items_in_collection(999)): 
         $item = get_current_item();
                
@@ -33,10 +33,10 @@
                     
             <?php if (item_has_thumbnail()): ?>
             <li class="span4">
-                <div class="right-caption span4">
-                    <?php echo link_to_item(item_thumbnail(array('alt'=>item('Dublin Core', 'Title'))),array('class'=>'span2')); ?>
+                <div class="right-caption">
+                    <?php echo link_to_item(item_thumbnail(array('alt'=>item('Dublin Core', 'Title')))); ?>
                     <div class="caption">
-                        <strong><?php echo link_to_item(item('Dublin Core', 'Title'), array('class'=>'permalink')); ?></strong><br />
+                        <?php echo link_to_item(item('Dublin Core', 'Title'), array('class'=>'permalink')); ?><br />
                         <?php   $progress_value = item('Scripto', 'Status');
                                 if ($progress_value == null) {
                                      $progress_value = 0;

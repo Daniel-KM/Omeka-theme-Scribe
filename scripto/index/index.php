@@ -27,14 +27,7 @@ Logged in as <?php echo $this->scripto->getUserName(); ?>
 <?php echo $this->homePageText ?>
 <?php else: ?>
 <h2>Welcome to Transcription @uiowa</h2>
-<p>Jen or someone writes something here to entice people to use <i><?php echo settings('site_title'); ?></i>. All items with files can be 
-transcribed. For these purposes an item is a <em>document</em>, and an item's 
-files are its <em>pages</em>. To begin transcribing documents, 
-<a href="<?php echo html_escape(uri('items')); ?>">browse items</a> or 
-<a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">view recent changes</a> 
-to Scripto. You may <a href="<?php echo html_escape(uri('scripto/login')); ?>">log in</a> to 
-access your account and enable certain features. Login may not be 
-required by the administrator. Change me!</p>
+<p>As a registered transcriber you can track your contributions, create a watchlist of your favorite pages, and leave comments on each page. Active transcribers can earn Expert Transcriber privileges to finalize pending transcriptions and correct errors in completed transcriptions.</p>
 <?php endif; ?>
 <?php else: ?>
 <h2>Your Contributions</h2>

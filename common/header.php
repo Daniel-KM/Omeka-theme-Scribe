@@ -52,9 +52,7 @@
                         </ul>
                      </li>
                 </li>
-                <li>
-                    <a href="#">this should go somewhere</a>
-                </li>
+
                 <li>
                     <a href="/transcribe/scripto/login">My Account</a>
                 </li>

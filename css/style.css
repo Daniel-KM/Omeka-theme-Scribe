@@ -291,6 +291,7 @@ td img {
 
 .thumbnail h4 {
    font-family: Inconsolata;
+   overflow: hidden;
 }
 
 .list-column {
@@ -306,4 +307,10 @@ td img {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+
+.tips {
+    list-style: circle outside;
+}
+
+
 

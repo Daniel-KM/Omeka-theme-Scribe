@@ -27,8 +27,6 @@
 
     <?php 
 
-    require_once '/local/vol00/srv/www/htdocs/transcribe/plugins/Scripto/libraries/Scripto.php'; 
-    $scripto = ScriptoPlugin::getScripto();
 
     $collectionList = display_featured_collections();
 
