@@ -59,5 +59,3 @@
             </ul>
 
         </div><!-- end header -->
-
-        

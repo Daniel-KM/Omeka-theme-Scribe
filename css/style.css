@@ -1,6 +1,7 @@
 
 /* General Styles */
 
+
 p {
     line-height: 1.8;
 }
@@ -311,6 +312,23 @@ td img {
 .tips {
     list-style: circle outside;
 }
+
+#primary {
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+
+.featured-collection {
+    background-color: white;
+}
+
+.container {
+    background-color: white;
+}
+
+
+
 
 
 

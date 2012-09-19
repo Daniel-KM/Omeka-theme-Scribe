@@ -335,7 +335,7 @@ jQuery(document).ready(function() {
                                 <div class="alert alert-success">
                                     <strong>This transcription is complete!</strong>
                                 </div>
-                                <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span12')); ?></div>
+                                <div id="scripto-transcription-page-html"><?php echo $this->transcriptionPageHtml; ?></div>
                                                       
 
                                     <?php //echo $this->formButton('scripto-transcription-page-edit','Save edits', array('class' => 'btn btn-primary')); ?> 

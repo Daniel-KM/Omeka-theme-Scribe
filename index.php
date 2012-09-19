@@ -18,13 +18,6 @@
     <p><?php echo get_theme_option('Homepage Text'); ?></p>
     <?php endif; ?>
 
-    <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
-    <!-- Featured Collection -->
-    <div id="featured-collection">
-        
-    </div><!-- end featured collection -->
-    <?php endif; ?>    
-
     <?php 
 
 
@@ -79,67 +72,68 @@
     $num_of_tr3 = count($col3_items); 
 
 ?>
-<h2>Featured Manuscript Collections</h2>
 
-<div class="list-column">
-<table class="table table-bordered table-striped table-condensed">
-  <thead>
-    <tr>
-      <td><h3><?php echo $col1_link; ?></h3><a href="<?php echo $col1_idl_link; ?>">view in Iowa Digital Library</a></td>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-  <?php
-      for ($i=0; $i < $num_of_tr1  ; $i++) { 
-          echo '<tr>';
-          echo '<td>'.$col1_item_list[$i]['link'].'</td>'; //.$col1_item_list[$i]['thumb']
-          echo '</tr>';
-      }
-      ?>
-  </tbody>
-</table>
-</div>
+  <div class="list-column">
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <td><h3><?php echo $col1_link; ?></h3><a href="<?php echo $col1_idl_link; ?>">view in Iowa Digital Library</a></td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <?php
+        for ($i=0; $i < $num_of_tr1  ; $i++) { 
+            echo '<tr>';
+            echo '<td>'.$col1_item_list[$i]['link'].'</td>'; //.$col1_item_list[$i]['thumb']
+            echo '</tr>';
+        }
+        ?>
+    </tbody>
+  </table>
+  </div>
 
-<div class="list-column">
-<table class="table table-bordered table-striped table-condensed">
-  <thead>
-    <tr>
-      <td><h3><?php echo $col2_link; ?></h3><a href="<?php echo $col2_idl_link; ?>">view in Iowa Digital Library</a></td>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-  <?php
-      for ($i=0; $i < $num_of_tr2  ; $i++) { 
-          echo '<tr>';
-          echo '<td>'.$col2_item_list[$i]['link'].'</td>'; //.$col1_item_list[$i]['thumb']
-          echo '</tr>';
-      }
-      ?>
-  </tbody>
-</table>
-</div>
+  <div class="list-column">
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <td><h3><?php echo $col2_link; ?></h3><a href="<?php echo $col2_idl_link; ?>">view in Iowa Digital Library</a></td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <?php
+        for ($i=0; $i < $num_of_tr2  ; $i++) { 
+            echo '<tr>';
+            echo '<td>'.$col2_item_list[$i]['link'].'</td>'; //.$col1_item_list[$i]['thumb']
+            echo '</tr>';
+        }
+        ?>
+    </tbody>
+  </table>
+  </div>
 
-<div class="list-column">
-<table class="table table-bordered table-striped table-condensed">
-  <thead>
-    <tr>
-      <td><h3><?php echo $col3_link; ?></h3><a href="<?php echo $col3_idl_link; ?>">view in Iowa Digital Library</a></td>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-  <?php
-      for ($i=0; $i < $num_of_tr3  ; $i++) { 
-          echo '<tr>';
-          echo '<td>'.$col3_item_list[$i]['link'].'</td>'; //.$col1_item_list[$i]['thumb']
-          echo '</tr>';
-      }
-      ?>
-  </tbody>
-</table>
-</div>
+  <div class="list-column">
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <td><h3><?php echo $col3_link; ?></h3><a href="<?php echo $col3_idl_link; ?>">view in Iowa Digital Library</a></td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <?php
+        for ($i=0; $i < $num_of_tr3  ; $i++) { 
+            echo '<tr>';
+            echo '<td>'.$col3_item_list[$i]['link'].'</td>'; //.$col1_item_list[$i]['thumb']
+            echo '</tr>';
+        }
+        ?>
+    </tbody>
+  </table>
+  </div>
+  </div>
+
 
 
 </div><!-- end primary -->
