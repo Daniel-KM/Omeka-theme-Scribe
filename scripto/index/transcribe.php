@@ -270,12 +270,13 @@ jQuery(document).ready(function() {
     <div id="scripto-transcribe" class="scripto">
                
             <h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?>Untitled Document<?php endif; ?></h2>
-              
-            <a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>">view in Iowa Digital Library</a>
+            <strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong>
 
-            <p>image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></p>
-            
-                    
+            <div class="span12">
+                <div style="margin-left: -20px; margin-bottom: -18px;" align="left">image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
+                <div style="padding-right: 18px;" align="right"><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
+            </div>  
+
         <div class="row">
 
             <div class="span12">
@@ -291,7 +292,7 @@ jQuery(document).ready(function() {
                     <div id="scripto-transcription-edit" class="content">
                         <br />
                         <?php if ($this->doc->isProtectedTranscriptionPage()): ?>
-                        <div class="alert alert-success">
+                        <div class="alert alert-error">
                             <strong>This transcription is complete!</strong>
                         </div>
                         <div id="scripto-transcription-page-html"><?php echo $this->transcriptionPageHtml; ?></div>
@@ -304,12 +305,8 @@ jQuery(document).ready(function() {
                             <li>If you can’t make out a word, enter “[illegible]”; if uncertain, indicate with square brackets, e.g. “[town?]”</li>
                         </ul>
                         <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span12')); ?></div>
-                        <?php endif; ?>  
-
+                        <?php endif; ?>           
                         
-                        
-                                              
-
                             <?php echo $this->formButton('scripto-transcription-page-edit','Save edits', array('class' => 'btn btn-primary')); ?> 
                             <?php if ($this->scripto->canProtect()): ?><?php echo $this->formButton('scripto-transcription-page-protect','Approve', array('class' => 'btn btn-primary')); ?> <?php endif; ?>
                             <?php if ($this->scripto->isLoggedIn()): ?><?php echo $this->formButton('scripto-page-watch', 'Watch', array('class' => 'btn btn-primary')); ?> <?php endif; ?>            
@@ -332,7 +329,7 @@ jQuery(document).ready(function() {
 
                             <div id="scripto-transcription-edit" class="content">
                                 <br />
-                                <div class="alert alert-success">
+                                <div class="alert alert-error">
                                     <strong>This transcription is complete!</strong>
                                 </div>
                                 <div id="scripto-transcription-page-html"><?php echo $this->transcriptionPageHtml; ?></div>

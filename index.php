@@ -5,26 +5,26 @@
   $(function () { 
     
    $('#slider1').bxSlider({
-    displaySlideQty: 6,
-    moveSlideQty: 6
+    displaySlideQty: 7,
+    moveSlideQty: 7
 
   });
 
    $('#slider2').bxSlider({
-    displaySlideQty: 6,
-    moveSlideQty: 6
+    displaySlideQty: 7,
+    moveSlideQty: 7
 
   });
 
    $('#slider3').bxSlider({
-    displaySlideQty: 6,
-    moveSlideQty: 6
+    displaySlideQty: 7,
+    moveSlideQty: 7
 
   });
 
    $('#slider4').bxSlider({
-    displaySlideQty: 6,
-    moveSlideQty: 6
+    displaySlideQty: 7,
+    moveSlideQty: 7
 
   });
 

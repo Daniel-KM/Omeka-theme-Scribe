@@ -14,7 +14,7 @@ Logged in as <?php echo $this->scripto->getUserName(); ?>
 (<a href="<?php echo html_escape(uri('scripto/logout')); ?>">logout</a>) 
  | <a href="<?php echo html_escape(uri('scripto/watchlist')); ?>">Your watchlist</a> 
 <?php else: ?>
-<a href="<?php echo html_escape(uri('scripto/login')); ?>">Log in</a> | <a href="http://s-lib017.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup&returnto=Main+Page" target="_blank">Create an account</a>
+<a href="<?php echo html_escape(uri('scripto/login')); ?>">Log in</a> | <a href="http://diyhistory.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup&returnto=Main+Page" target="_blank">Create an account</a>
 <?php endif; ?>
  | <a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">Recent changes</a>
 

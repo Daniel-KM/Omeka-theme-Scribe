@@ -19,8 +19,8 @@
 
         <div class="element-text">
             <?php
-            require_once '/local/vol00/srv/www/htdocs/omeka/plugins/Scripto/libraries/Scripto.php';
-            require_once '/local/vol00/srv/www/htdocs/omeka/application/helpers/Media.php';
+            require_once './././plugins/Scripto/libraries/Scripto.php';
+            require_once './././application/helpers/Media.php';
             $scripto = ScriptoPlugin::getScripto();
             $helper = new Omeka_View_Helper_Media;
             $props = array();
@@ -32,13 +32,13 @@
                 //$status = $this->fileMetadata($file, 'Dublin Core', 'Rights'); 
                 switch ($status) {
                 case 'Completed':
-                    $label = "label-success";
+                    $label = "label-important";
                     break;
                 case 'Needs Review':
                     $label = "label-warning";
                     break;
                 case 'Not Started':
-                    $label = "label-important";
+                    $label = "label-success";
                     break;                
                 default:
                     $label = "label-important";
@@ -54,7 +54,7 @@
                  }
                  echo '   <li class="span2">';
                  echo '       <div class="thumbnail">';
-                 echo '           <a href="http://s-lib017.lib.uiowa.edu/transcribe/scripto/transcribe/'.$file->item_id.'/'.$file->id.'"><img src="http://s-lib017.lib.uiowa.edu/transcribe/archive/square_thumbnails/' . $file->archive_filename . '" /></a>';
+                 echo '           <a href="http://diyhistory.lib.uiowa.edu/transcribe/scripto/transcribe/'.$file->item_id.'/'.$file->id.'"><img src="http://diyhistory.lib.uiowa.edu/transcribe/archive/square_thumbnails/' . $file->archive_filename . '" /></a>';
                  echo '           <h4>'.$fileTitle.'</h4>';
                  echo '           <span class="label '.$label.'">'.$status.'</span>';
                  echo '       </div>';
