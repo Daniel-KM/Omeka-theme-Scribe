@@ -46,7 +46,7 @@
 
     $collectionList = display_featured_collections();
 
-    //-------------------COLLECTION 1-----------------------------------//
+    //-------------------Szathmary Culinary Manuscripts and Cookbooks-----------------------------------//
 
     $col1 = $collectionList[0];
     $col1_link = link_to_collection($collectionTitle, array(), 'show', $col1);
@@ -61,7 +61,7 @@
                                                   'link'=>item_uri(), 'name'=>item('Dublin Core', 'Title')));
     }
 
-    //-------------------COLLECTION 2-----------------------------------//
+    //-------------------Nile Kinnick Collection-----------------------------------//
 
     $col2 = $collectionList[1]; 
     $col2_link = link_to_collection($collectionTitle, array(), 'show', $col2);
@@ -76,7 +76,7 @@
                                                   'link'=>item_uri(), 'name'=>item('Dublin Core', 'Title')));
     }
    
-    //-------------------COLLECTION 3-----------------------------------//
+    //-------------------Civil War Diaries and Letters-----------------------------------//
 
     $col3 = $collectionList[2];
     $col3_link = link_to_collection($collectionTitle, array(), 'show', $col3);
@@ -91,7 +91,7 @@
                                                   'link'=>item_uri(), 'name'=>item('Dublin Core', 'Title')));
     }
 
-    //-------------------COLLECTION 4-----------------------------------//
+    //-------------------Iowa Byington Reed Diaries-----------------------------------//
 
     $col4 = $collectionList[3];
     $col4_link = link_to_collection($collectionTitle, array(), 'show', $col4);
@@ -112,35 +112,6 @@
     $num_of_tr4 = count($col4_items);
 
 ?>
-<h1><?php echo $col1_link; ?></h1>
-<ul id="slider1" class="slider">
-  <?php
-  
-      for ($i=0; $i < $num_of_tr1; $i++) { 
-          echo '<li>';
-          echo '<a href="'.$col1_item_list[$i]['link'].'" rel="tooltip" title="'.$col1_item_list[$i]['name'].'">'.$col1_item_list[$i]['thumb'].'</a>';
-          echo '</li>';
-      }
-  ?>
-
-</ul>
-
-<br />
-
-<h1><?php echo $col2_link; ?></h1>
-<ul id="slider2" class="slider">
-  <?php
-  
-      for ($i=0; $i < $num_of_tr2; $i++) { 
-          echo '<li>';
-          echo '<a href="'.$col2_item_list[$i]['link'].'" rel="tooltip" title="'.$col2_item_list[$i]['name'].'">'.$col2_item_list[$i]['thumb'].'</a>';
-          echo '</li>';
-      }
-  ?>
-
-</ul>
-
-<br />
 
 <h1><?php echo $col3_link; ?></h1>
 <ul id="slider3" class="slider">
@@ -171,6 +142,39 @@
 </ul>
 
 <br />
+
+<h1><?php echo $col2_link; ?></h1>
+<ul id="slider2" class="slider">
+  <?php
+  
+      for ($i=0; $i < $num_of_tr2; $i++) { 
+          echo '<li>';
+          echo '<a href="'.$col2_item_list[$i]['link'].'" rel="tooltip" title="'.$col2_item_list[$i]['name'].'">'.$col2_item_list[$i]['thumb'].'</a>';
+          echo '</li>';
+      }
+  ?>
+
+</ul>
+
+<br />
+
+<h1><?php echo $col1_link; ?></h1>
+<ul id="slider1" class="slider">
+  <?php
+  
+      for ($i=0; $i < $num_of_tr1; $i++) { 
+          echo '<li>';
+          echo '<a href="'.$col1_item_list[$i]['link'].'" rel="tooltip" title="'.$col1_item_list[$i]['name'].'">'.$col1_item_list[$i]['thumb'].'</a>';
+          echo '</li>';
+      }
+  ?>
+
+</ul>
+
+
+
+
+
 
 
 
