@@ -26,7 +26,8 @@
         <h2><?php //echo __('Items in the %s Collection', collection('Name')); ?></h2>
         
         <ul class="nobullet">
-        <?php while (loop_items_in_collection(999)): 
+        <?php set_items_for_loop(get_items(array('sort_field' => 'Dublin Core,Title', 'collection' => collection('id')), 999));
+        while (loop_items()):  
         $item = get_current_item();
                
         ?>
