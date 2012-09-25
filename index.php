@@ -4,25 +4,25 @@
 !function( $ ){
   $(function () { 
     
-   $('#slider1').bxSlider({
+   $('#cookbooks').bxSlider({
     displaySlideQty: 7,
     moveSlideQty: 7
 
   });
 
-   $('#slider2').bxSlider({
+   $('#byington').bxSlider({
     displaySlideQty: 7,
     moveSlideQty: 7
 
   });
 
-   $('#slider3').bxSlider({
+   $('#kinnick').bxSlider({
     displaySlideQty: 7,
     moveSlideQty: 7
 
   });
 
-   $('#slider4').bxSlider({
+   $('#civil-war').bxSlider({
     displaySlideQty: 7,
     moveSlideQty: 7
 
@@ -113,13 +113,13 @@
 
 ?>
 
-<h1><?php echo $col3_link; ?></h1>
-<ul id="slider3" class="slider">
+<h1><?php echo $col1_link; ?></h1>
+<ul id="cookbooks" class="slider">
   <?php
   
-      for ($i=0; $i < $num_of_tr3; $i++) { 
+      for ($i=0; $i < $num_of_tr1; $i++) { 
           echo '<li>';
-          echo '<a href="'.$col3_item_list[$i]['link'].'" rel="tooltip" title="'.$col3_item_list[$i]['name'].'">'.$col3_item_list[$i]['thumb'].'</a>';
+          echo '<a href="'.$col1_item_list[$i]['link'].'" rel="tooltip" title="'.$col1_item_list[$i]['name'].'">'.$col1_item_list[$i]['thumb'].'</a>';
           echo '</li>';
       }
   ?>
@@ -129,7 +129,7 @@
 <br />
 
 <h1><?php echo $col4_link; ?></h1>
-<ul id="slider4" class="slider">
+<ul id="byington" class="slider">
   <?php
   
       for ($i=0; $i < $num_of_tr4; $i++) { 
@@ -144,7 +144,7 @@
 <br />
 
 <h1><?php echo $col2_link; ?></h1>
-<ul id="slider2" class="slider">
+<ul id="kinnick" class="slider">
   <?php
   
       for ($i=0; $i < $num_of_tr2; $i++) { 
@@ -158,18 +158,20 @@
 
 <br />
 
-<h1><?php echo $col1_link; ?></h1>
-<ul id="slider1" class="slider">
+<h1><?php echo $col3_link; ?></h1>
+<ul id="civil-war" class="slider">
   <?php
   
-      for ($i=0; $i < $num_of_tr1; $i++) { 
+      for ($i=0; $i < $num_of_tr3; $i++) { 
           echo '<li>';
-          echo '<a href="'.$col1_item_list[$i]['link'].'" rel="tooltip" title="'.$col1_item_list[$i]['name'].'">'.$col1_item_list[$i]['thumb'].'</a>';
+          echo '<a href="'.$col3_item_list[$i]['link'].'" rel="tooltip" title="'.$col3_item_list[$i]['name'].'">'.$col3_item_list[$i]['thumb'].'</a>';
           echo '</li>';
       }
   ?>
 
 </ul>
+
+<br />
 
 
 
