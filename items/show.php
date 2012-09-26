@@ -4,32 +4,20 @@
 
     <h1><?php echo item('Dublin Core', 'Title'); ?></h1>
 
-    <?php //echo custom_show_item_metadata(); ?>
-    
-    <!--
-    <ul class="item-pagination navigation">
-        <li id="previous-item" class="previous"><?php //echo link_to_previous_item(); ?></li>
-        <li id="next-item" class="next"><?php //echo link_to_next_item(); ?></li>
-    </ul>
-    -->
-
     <!-- The following returns all of the files associated with an item. -->
     <div id="itemfiles" class="element">
-        <!-- <h3><?php //echo __('Files'); ?></h3> -->
-
+        
         <div class="element-text">
             <?php
             require_once './././plugins/Scripto/libraries/Scripto.php';
             require_once './././application/helpers/Media.php';
             $scripto = ScriptoPlugin::getScripto();
             $helper = new Omeka_View_Helper_Media;
-            $props = array();
             $files =  return_files_for_item(array());           
-            //$output = '';
             echo '<ul class="thumbnails">';
             foreach ($files as $file) {
                 $status = $scripto->getPageTranscriptionStatus($file->id);
-                //$status = $this->fileMetadata($file, 'Dublin Core', 'Rights'); 
+                 
                 switch ($status) {
                 case 'Completed':
                     $label = "label-important";

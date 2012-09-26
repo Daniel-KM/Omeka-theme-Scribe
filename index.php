@@ -50,6 +50,7 @@
 
     $cookbooks = $collectionList[0];
     $cookbooks_link = link_to_collection($collectionTitle, array(), 'show', $cookbooks);
+    
     $cookbooks_items = get_items(array('collection' => $cookbooks['id']),9000); 
     set_items_for_loop($cookbooks_items);
     $cookbooks_item_list = array();
@@ -113,7 +114,9 @@
 
 ?>
 
-<h1><?php echo $cookbooks_link; ?></h1>
+<h1 style="display: inline;">Szathmary Culinary Manuscripts and Cookbooks</h1>
+<strong>(<a href="http://diyhistory.lib.uiowa.edu/transcribe/collections/show/7">browse all</a>)</strong>
+<br /><br />
 <ul id="cookbooks" class="slider">
   <?php
   
@@ -128,7 +131,9 @@
 
 <br />
 
-<h1><?php echo $byington_link; ?></h1>
+<h1 style="display: inline;">Iowa Byington Reed Diaries</h1>
+<strong>(<a href="http://diyhistory.lib.uiowa.edu/transcribe/collections/show/9">browse all</a>)</strong>
+<br /><br />
 <ul id="byington" class="slider">
   <?php
   
@@ -143,7 +148,9 @@
 
 <br />
 
-<h1><?php echo $kinnick_link; ?></h1>
+<h1 style="display: inline;">Nile Kinnick Collection</h1>
+<strong>(<a href="http://diyhistory.lib.uiowa.edu/transcribe/collections/show/6">browse all</a>)</strong>
+<br /><br />
 <ul id="kinnick" class="slider">
   <?php
   
@@ -158,7 +165,9 @@
 
 <br />
 
-<h1><?php echo $civil_war_link; ?></h1>
+<h1 style="display: inline;">Civil War Diaries and Letters</h1>
+<strong>(<a href="http://diyhistory.lib.uiowa.edu/transcribe/collections/show/8">browse all</a>)</strong>
+<br /><br />
 <ul id="civil-war" class="slider">
   <?php
   
