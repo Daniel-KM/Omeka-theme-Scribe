@@ -31,8 +31,11 @@
 
 </head>
 
-<?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
-    <?php //plugin_body(); ?>
+<?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); 
+    require_once './././plugins/Scripto/libraries/Scripto.php';
+    $scripto = ScriptoPlugin::getScripto();
+?>
+    
     <div class="container">
 
         <div class="masthead clearfix">
@@ -40,9 +43,33 @@
             <h1 class="pull-left"><br /><?php echo link_to_home_page(custom_display_logo()); ?></h1>
 
             <ul class="nav nav-pills pull-right">
+
+                <li>
+      
+                   <a href="http://diyhistory.lib.uiowa.edu">Crowdsourcing Home</a>
+
+                </li>   
+                     
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Collections<b class="caret"></b></a>
+     
+                    <ul class="dropdown-menu">
+                        <li><a href="/transcribe/collections/show/9">Iowa Byington Reed Diaries</a></li>
+                        <li><a href="/transcribe/collections/show/7">Szathmary Culinary Manuscripts and Cookbooks</a></li>         
+                        <li><a href="/transcribe/collections/show/8">Civil War Diaries and Letters</a></li>      
+                        <li><a href="/transcribe/collections/show/6">Papers of Nile C. Kinnick</a></li>         
+                    </ul>      
+                </li>
+                
                 
                 <li>
-                    <a href="/transcribe/scripto/login">My Account</a>
+                    <?php if ($scripto->isLoggedIn()): ?>
+
+                        <a href="/transcribe/scripto/login">Hello, <strong><?php echo $scripto->getUserName(); ?></strong></a>
+                    <?php else: ?>
+                        <a href="/transcribe/scripto/login">Login</a>                    
+
+                    <?php endif; ?>
+                    
                 </li>
             </ul>
 

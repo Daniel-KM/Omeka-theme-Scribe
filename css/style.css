@@ -271,19 +271,27 @@ li {
     margin-top: 5px;
 }
 
-.right-caption img {
-    height: 200px;
-    width: 155px;
-    margin-bottom: 25px;
-
-
+.thumbnail.right-caption > img {
+    float: left;
+    margin-right: 0px;
 }
 
-.caption {
-    width: 120px;
-    float: right;
-    text-align: left;
+#col-images img {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+    margin-left: 5px;
     position: relative;
+}
+
+#col-images {
+    width: 250px;
+    height: 125px;
+}
+
+.thumbnail.right-caption {
+    float: left;
+
 }
 
 td img {
