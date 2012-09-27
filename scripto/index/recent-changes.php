@@ -7,22 +7,13 @@ head($head);
 
 <div id="scripto-recent-changes" class="scripto">
 <!-- navigation -->
-<p>
-<?php if ($this->scripto->isLoggedIn()): ?>
-Logged in as <a href="<?php echo html_escape(uri('scripto')); ?>"><?php echo $this->scripto->getUserName(); ?></a> 
-(<a href="<?php echo html_escape(uri('scripto/logout')); ?>">logout</a>) 
- | <a href="<?php echo html_escape(uri('scripto/watchlist')); ?>">Your watchlist</a> 
-<?php else: ?>
-<a href="<?php echo html_escape(uri('scripto/login')); ?>">Log in</a>
-<?php endif; ?>
-</p>
 
 <!-- recent changes -->
 <h2>Recent Changes</h2>
 <?php if (empty($this->recentChanges)): ?>
 <p>There are no recent changes.</p>
 <?php else: ?>
-<table>
+<table class="table table-condensed table-striped table-bordered">
     <thead>
         <tr>
             <th>Changes</th>

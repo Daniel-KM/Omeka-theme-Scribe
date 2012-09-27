@@ -267,19 +267,25 @@ jQuery(document).ready(function() {
 <h1><?php echo $head['title']; ?></h1>
 
 <div id="primary">
+    
+    <ul class="breadcrumb">
+        <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a><span class="divider">/</span></li>
+        <li><a href="<?php echo uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
+        <li><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></li>
+        </ul>
     <div id="scripto-transcribe" class="scripto">
-               
+             
             <h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?>Untitled Document<?php endif; ?></h2>
             <strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong>
 
             <div class="span12">
                 <div style="margin-left: -20px; margin-bottom: -18px;" align="left">image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
-                <div style="padding-right: 18px;" align="right"><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
+                <div style="padding-right: 60px;" align="right"><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
             </div>  
 
         <div class="row">
 
-            <div class="span12">
+            <div style="width: 98%;" class="span12">
                 <?php echo display_file($this->file); ?>
             </div>
 
@@ -304,7 +310,7 @@ jQuery(document).ready(function() {
                             <li>No need to account for formatting (e.g. spacing, line breaks, alignment); the goal is to provide text for searching.</li>
                             <li>If you can’t make out a word, enter “[illegible]”; if uncertain, indicate with square brackets, e.g. “[town?]”</li>
                         </ul>
-                        <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span12')); ?></div>
+                        <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span11')); ?></div>
                         <?php endif; ?>           
                         
                             <?php echo $this->formButton('scripto-transcription-page-edit','Save edits', array('class' => 'btn btn-primary')); ?> 
@@ -347,20 +353,23 @@ jQuery(document).ready(function() {
                          |  <?php if (isset($this->paginationUrls['next'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['next']); ?>'">next</button></a><?php else: ?><button type="submit" class="btn btn-mini">next</button><?php endif; ?>
                          |  <a><button class="btn btn-mini nav-btn" onClick="parent.location='<?php echo $all_images; ?>'">all images</button></a>
                         
-                        </div>
-
-                            <a href="#" id="scripto-page-show"></a>
+                        </div>                            
                             
                         </div><!-- #scripto-transcription-edit -->
 
                     <?php endif; ?>                    
-                    
+                   
                 </div><!-- #scripto-transcription -->
-
-            </div>
-
-        </div>  
-
-    </div>
-
 </div>
+  <?php foot(); ?>
+
+
+
+
+          
+
+
+
+
+
+

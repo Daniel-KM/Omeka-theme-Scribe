@@ -1,6 +1,10 @@
 <?php head(array('title'=>collection('Name'), 'bodyid'=>'collections', 'bodyclass' => 'show')); ?>
 
 <div id="primary">
+    <ul class="breadcrumb">
+      <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a> <span class="divider">/</span></li>
+      <li class="active"><a href="#"><?php echo collection('Name'); ?></a></li>
+    </ul>
     <h1><?php echo collection('Name'); ?></h1>
 
     <div id="description" class="element">
@@ -37,6 +41,6 @@
         <?php endwhile; ?>
         </ul>
     </div><!-- end collection-items -->
-
+<?php foot(); ?>
  </div><!-- end primary -->
 

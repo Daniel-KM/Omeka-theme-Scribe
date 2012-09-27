@@ -1,14 +1,17 @@
 <?php
-$head = array('title' => html_escape('Login'));
+$head = array('title' => html_escape('Sign in'));
 head($head);
 ?>
-<h1><?php echo $head['title']; ?></h1>
+<h2>&nbsp&nbsp&nbsp&nbsp<?php echo $head['title']; ?></h2>
 <div id="primary">
 
 <!-- navigation -->
-
-<p><a href="http://diyhistory.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup&returnto=Main+Page" target="_blank">Create an account</a> | <a href="<?php echo html_escape(uri('scripto/index/recent-changes')); ?>">Recent changes</a></p>
-<p></p>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#">login page</a></li>
+	<li><a href="http://diyhistory.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup&returnto=Main+Page" target="parent">Create an account</a></li>
+    <li><a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">Recent changes</a> 
+    
+</ul>
 
 <!-- login -->
 <form action="<?php echo uri('scripto/index/login'); ?>" method="post">
@@ -27,6 +30,7 @@ head($head);
 <?php echo $this->formHidden('scripto_redirect_url', $this->redirectUrl); ?>
 <?php echo $this->formSubmit('scripto_mediawiki_login', 'Login', array('class' => 'btn btn-primary'), array('style' => 'display:inline; float:none;')); ?>
 </form>
+<?php foot(); ?>
 </div><!-- #scripto-login -->
+
 </div>
-<?php //foot(); ?>

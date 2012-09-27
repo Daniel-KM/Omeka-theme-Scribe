@@ -8,18 +8,13 @@ head($head);
 
 <div id="scripto-watchlist" class="scripto">
 <!-- navigation -->
-<p>
-Logged in as <a href="<?php echo html_escape(uri('scripto')); ?>"><?php echo $this->scripto->getUserName(); ?></a> 
-(<a href="<?php echo html_escape(uri('scripto/logout')); ?>">logout</a>) 
- | <a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">Recent changes</a>
-</p>
 
 <!-- watchlist -->
 <h2>Your Watchlist</h2>
 <?php if (empty($this->watchlist)): ?>
 <p>There are no document pages in your watchlist.</p>
 <?php else: ?>
-<table>
+<table class="table table-condensed table-striped table-bordered">
     <thead>
     <tr>
         <th>Changes</th>

@@ -24,6 +24,16 @@
     display_css();
     ?>
 
+    <style>
+        .masthead { height: 100px; background-color: #FFF; margin: 0; padding: 10; background-image: url(../images/background.gif); }
+        #sublinks ul {  margin: 0; float: right; }
+        #sublinks ul li { display: inline; padding-left: 0px; }
+        #sublinks a { color: #6A231F; font-size: .9em; font-weight: bold; }
+        #content { background-color: #fff; padding: 10px 20px; margin-top: 20px; }
+h2 { color: #6A231F; }
+        h2 { color: #6A231F; }
+</style>
+
     <!-- JavaScripts -->
     <?php display_js(); ?>   
 
@@ -38,39 +48,48 @@
     
     <div class="container">
 
-        <div class="masthead clearfix">
-                        
-            <h1 class="pull-left"><br /><?php echo link_to_home_page(custom_display_logo()); ?></h1>
+        <div id="sublinks" class="masthead clearfix">
 
-            <ul class="nav nav-pills pull-right">
-
-                <li>
-      
-                   <a href="http://diyhistory.lib.uiowa.edu">Crowdsourcing Home</a>
-
-                </li>   
-                     
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Collections<b class="caret"></b></a>
-     
-                    <ul class="dropdown-menu">
-                        <li><a href="/transcribe/collections/show/9">Iowa Byington Reed Diaries</a></li>
-                        <li><a href="/transcribe/collections/show/7">Szathmary Culinary Manuscripts and Cookbooks</a></li>         
-                        <li><a href="/transcribe/collections/show/8">Civil War Diaries and Letters</a></li>      
-                        <li><a href="/transcribe/collections/show/6">Papers of Nile C. Kinnick</a></li>         
-                    </ul>      
-                </li>
-                
-                
-                <li>
+            <div id="header">
+    
+                <ul class="nav nav-pills pull-right">
+                         
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Collections</strong><b class="caret"></b></a>
+         
+                        <ul class="dropdown-menu">
+                            <li><a href="/transcribe/collections/show/9">Iowa Byington Reed Diaries</a></li>
+                            <li><a href="/transcribe/collections/show/7">Szathmary Culinary Manuscripts and Cookbooks</a></li>         
+                            <li><a href="/transcribe/collections/show/8">Civil War Diaries and Letters</a></li>      
+                            <li><a href="/transcribe/collections/show/6">Papers of Nile C. Kinnick</a></li>         
+                        </ul>      
+                    </li>                
+                    
                     <?php if ($scripto->isLoggedIn()): ?>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><?php echo $scripto->getUserName(); ?></strong><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/transcribe/scripto">Your Contributions</a></li>
+                            <li><a href="/transcribe/scripto/watchlist">Your Watchlist</a></li>
+                            <li><a href="/transcribe/scripto/recent-changes">Recent Changes</a></li>
+                            <li><a href="/transcribe/scripto/logout">Logout</a></li>
+                        </ul>
+                    </li>
 
-                        <a href="/transcribe/scripto/login">Hello, <strong><?php echo $scripto->getUserName(); ?></strong></a>
                     <?php else: ?>
-                        <a href="/transcribe/scripto/login">Login</a>                    
+
+                    <li>
+                    <a href="/transcribe/scripto/login"><strong>Sign in</strong></a>                          
+                    </li>
 
                     <?php endif; ?>
-                    
-                </li>
-            </ul>
+                </ul>
+    
+            <img src="/images/sub.png" alt="DIY History at The University of Iowa Libraries" title="DIY History at The University of Iowa Libraries" width="960" height="80" border="0" usemap="#Map">
+            <map name="Map">
+              <area shape="rect" coords="781,30,952,77" href="http://www.lib.uiowa.edu/" alt="The University of Iowa Libraries" title="The University of Iowa Libraries">
+              <area shape="rect" coords="393,25,568,67" href="http://diyhistory.lib.uiowa.edu/transcribe" alt="Transcribe" title="Transcribe">
+              <area shape="rect" coords="9,4,370,75" href="http://diyhistory.lib.uiowa.edu" alt="DIY History Home" title="DIY History Home">
+            </map>
+      </div>           
 
-        </div><!-- end header -->
+</div><!-- end header -->
+<hr />

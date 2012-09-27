@@ -8,18 +8,6 @@ head($head);
 
 <div id="scripto-index" class="scripto">
 <!-- navigation -->
-<p>
-<?php if ($this->scripto->isLoggedIn()): ?>
-Logged in as <?php echo $this->scripto->getUserName(); ?> 
-(<a href="<?php echo html_escape(uri('scripto/logout')); ?>">logout</a>) 
- | <a href="<?php echo html_escape(uri('scripto/watchlist')); ?>">Your watchlist</a> 
-<?php else: ?>
-<a href="<?php echo html_escape(uri('scripto/login')); ?>">Log in</a> | <a href="http://diyhistory.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup&returnto=Main+Page" target="_blank">Create an account</a>
-<?php endif; ?>
- | <a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">Recent changes</a>
-
-
-</p>
 
 <!-- your contributions -->
 <?php if (!$this->scripto->isLoggedIn()): ?>
@@ -34,7 +22,7 @@ Logged in as <?php echo $this->scripto->getUserName(); ?>
 <?php if (empty($this->documentPages)): ?>
 <p>You have no contributions.</p>
 <?php else: ?>
-<table>
+<table class="table table-condensed table-striped table-bordered">
     <thead>
     <tr>
         <th>Document Page Name</th>

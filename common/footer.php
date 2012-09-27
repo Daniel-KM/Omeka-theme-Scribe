@@ -1,20 +1,42 @@
         </div><!-- end content -->
 
         <div id="footer">
-
-            <ul class="navigation">
-                <?php echo public_nav_main(array(__('Home') => uri(''), __('Browse Items') => uri('items'), __('Browse Collections') => uri('collections'))); ?>
-            </ul>
-
-            <div id="footer-text">
-                <?php echo get_theme_option('Footer Text'); ?>
-                <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = settings('copyright')): ?>
-                    <p><?php echo $copyright; ?></p>
-                <?php endif; ?>
-                <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
+           <hr />  
+           <div class="row2 span12">
+              <div class="span3 bar about">
+                <h3>About</h3>
+                <ul>
+                  <li><a href="about.php">About the project</a></li>
+                  <li><a href="about.php#faq">FAQ</a></li>
+                  <li><a href="about.php#tips">Transcription tips</a></li>
+                  <li><a href="about.php#articles">Articles & presentations</a></li>
+                  <li><a href="http://www.lib.uiowa.edu/drp/contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="span3 bar contribute">
+                <h3>Contribute</h3>
+                <ul>
+                  <li>Statistics-coming soon</li>
+                  <li><a href="http://diyhistory.lib.uiowa.edu/w/index.php/Special:AWCforum" target="parent">Discussion Forum</a></li>
+                </ul>
+              </div>
+              <div class="span3 bar news">
+                <h3>News</h3>
+                <script src="http://feeds.feedburner.com/DiyHistory?format=sigpro" type="text/javascript" ></script>
+                <noscript>
+                <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/DigitalResearchPublishing"></a><br/>
+                  Powered by FeedBurner</p>
+                </noscript>
+              </div>
+              <div class="span3 twitter">
+                <h3>Tweets</h3>
+                <script src="http://feeds.feedburner.com/Twitter/Uil_transcripts?format=sigpro" type="text/javascript" ></script>
+                <noscript>
+                <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/Twitter/Uil_transcripts"></a><br/>
+                  Powered by FeedBurner</p>
+                </noscript>
+              </div>
             </div>
-
-            <?php plugin_footer(); ?>
 
         </div><!-- end footer -->
     </div><!-- end wrap -->
