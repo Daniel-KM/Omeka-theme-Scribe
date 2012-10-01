@@ -25,6 +25,21 @@
     display_css();
     ?>
 
+    <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-783364-57']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+</script>
+
+
     <style>
         .masthead { height: 100px; background-color: #FFF; margin: 0; padding: 10; background-image: url(../images/background.gif); }
         #sublinks ul {  margin: 0; float: right; }

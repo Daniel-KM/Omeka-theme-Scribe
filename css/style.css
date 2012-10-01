@@ -457,13 +457,13 @@ body { background-color: #e2e5ce;}
 .span3 { width: 180px; height: 200px; }
 .bar { border-right-width: 2px; border-right-style: solid; border-right-color: #e2e5ce; height: 200px; }
 
-.row { background-color: #fff; margin-left: 0; *zoom: 1;
+.row-linda { background-color: #fff; margin-left: 0; *zoom: 1;
 }
-.row:before, .row:after { display: table; line-height: 0; content: ""; }
-.row:after { clear: both; }
-.row { height: 85px; margin: 0 0 10px 0; padding: 0; }
-.row h3 { font-size: 1em; color: #900; margin: 0; padding: 0; font-weight: bold; }
-.row li { font-size: .9em; padding: 0; margin: 0; }
+.row-linda:before, .row-linda:after { display: table; line-height: 0; content: ""; }
+.row-linda:after { clear: both; }
+.row-linda { height: 85px; margin: 0 0 10px 0; padding: 0; }
+.row-linda h3 { font-size: 1em; color: #900; margin: 0; padding: 0; font-weight: bold; }
+.row-linda li { font-size: .9em; padding: 0; margin: 0; }
 .row2 { background-color: #fff; margin-left: 0; *zoom: 1; margin-top: 10px;}
 .row2:before, .row2:after { display: table; line-height: 0; content: ""; }
 .row2:after { clear: both; }

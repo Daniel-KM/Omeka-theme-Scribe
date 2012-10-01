@@ -268,7 +268,7 @@ $("pre").wrapInner('<div>').find('div').unwrap();
 
 <h1><?php echo $head['title']; ?></h1>
 
-<div id="primary">
+<div id="primary" class="span11">
     
     <ul class="breadcrumb">
         <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a><span class="divider">/</span></li>
@@ -278,20 +278,20 @@ $("pre").wrapInner('<div>').find('div').unwrap();
     <div id="scripto-transcribe" class="scripto">
              
             <h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?>Untitled Document<?php endif; ?></h2>
-            <strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong>
-
-            <div class="span12">
-                <div style="margin-left: -20px; margin-bottom: -18px;" align="left">image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
-                <div style="padding-right: 60px;" align="right"><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
+            
+            <div>
+                <div><strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong></div>
+                <div>image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
+                <div><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
             </div>  
-
-        <div class="row">
+            
+        <div class="row" style="margin-left: 0px;">
 
             
                 <?php echo display_file($this->file); ?>
             
 
-            <div class="span11">
+            <div class="span11" style="margin-left: 0px;">
 
                 <div id="scripto-transcription">
 
@@ -426,7 +426,6 @@ $("pre").wrapInner('<div>').find('div').unwrap();
 
 
           
-
 
 
 
