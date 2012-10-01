@@ -2,14 +2,14 @@
 
         <div id="footer">
            <hr />  
-           <div class="row2 span12">
+           <div class="row2 span11">
               <div class="span3 bar about">
                 <h3>About</h3>
                 <ul>
-                  <li><a href="about.php">About the project</a></li>
-                  <li><a href="about.php#faq">FAQ</a></li>
-                  <li><a href="about.php#tips">Transcription tips</a></li>
-                  <li><a href="about.php#articles">Articles & presentations</a></li>
+                  <li><a href="http://diyhistory.lib.uiowa.edu/about.php">About the project</a></li>
+                  <li><a href="http://diyhistory.lib.uiowa.edu/about.php#faq">FAQ</a></li>
+                  <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">Transcription tips</a></li>
+                  <li><a href="http://diyhistory.lib.uiowa.edu/about.php#articles">Articles & presentations</a></li>
                   <li><a href="http://www.lib.uiowa.edu/drp/contact.html">Contact Us</a></li>
                 </ul>
               </div>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo get_html_lang(); ?>">
 <head>
+    <script type="text/javascript"> </script>
     <meta charset="utf-8">
     <?php if ( $description = settings('description')): ?>
     <meta name="description" content="<?php echo $description; ?>" />
@@ -27,7 +28,7 @@
     <style>
         .masthead { height: 100px; background-color: #FFF; margin: 0; padding: 10; background-image: url(../images/background.gif); }
         #sublinks ul {  margin: 0; float: right; }
-        #sublinks ul li { display: inline; padding-left: 0px; }
+        
         #sublinks a { color: #6A231F; font-size: .9em; font-weight: bold; }
         #content { background-color: #fff; padding: 10px 20px; margin-top: 20px; }
 h2 { color: #6A231F; }
@@ -53,17 +54,7 @@ h2 { color: #6A231F; }
             <div id="header">
     
                 <ul class="nav nav-pills pull-right">
-                         
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Collections</strong><b class="caret"></b></a>
-         
-                        <ul class="dropdown-menu">
-                            <li><a href="/transcribe/collections/show/9">Iowa Byington Reed Diaries</a></li>
-                            <li><a href="/transcribe/collections/show/7">Szathmary Culinary Manuscripts and Cookbooks</a></li>         
-                            <li><a href="/transcribe/collections/show/8">Civil War Diaries and Letters</a></li>      
-                            <li><a href="/transcribe/collections/show/6">Papers of Nile C. Kinnick</a></li>         
-                        </ul>      
-                    </li>                
-                    
+
                     <?php if ($scripto->isLoggedIn()): ?>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><?php echo $scripto->getUserName(); ?></strong><b class="caret"></b></a>
                         <ul class="dropdown-menu">

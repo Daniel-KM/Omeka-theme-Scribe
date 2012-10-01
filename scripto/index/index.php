@@ -14,7 +14,7 @@ head($head);
 <?php if ($this->homePageText): ?>
 <?php echo $this->homePageText ?>
 <?php else: ?>
-<h2>Welcome to Transcription @uiowa</h2>
+<h2>Welcome to DIY|History</h2>
 <p>As a registered transcriber you can track your contributions, create a watchlist of your favorite pages, and leave comments on each page. Active transcribers can earn Expert Transcriber privileges to finalize pending transcriptions and correct errors in completed transcriptions.</p>
 <?php endif; ?>
 <?php else: ?>
@@ -65,5 +65,5 @@ head($head);
 <?php endif; ?>
 <?php endif; ?>
 </div><!-- #scripto-index -->
+<?php foot(); ?>
 </div>
-<?php //foot(); ?>

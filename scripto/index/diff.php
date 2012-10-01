@@ -13,7 +13,7 @@ td.diff-addedline {background-color: #EDFFEF;}
 ins.diffchange {background-color: #BDFFC8;}
 del.diffchange {background-color: #FFBDBD;}
 </style>
-<h1><?php echo $head['title']; ?></h1>
+<h2>&nbsp&nbsp&nbsp&nbsp<?php echo $head['title']; ?></h2>
 <div id="primary">
 
 <div id="scripto-diff" class="scripto">
@@ -47,5 +47,5 @@ del.diffchange {background-color: #FFBDBD;}
 <h2>Revision as of <?php echo date('H:i:s, M d, Y', strtotime($this->revision['timestamp'])); ?></h2>
 <div><?php echo $this->revision['html']; ?></div>
 </div><!-- #scripto-diff -->
+<?php foot(); ?>
 </div>
-<?php //foot(); ?>

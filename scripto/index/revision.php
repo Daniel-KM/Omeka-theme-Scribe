@@ -4,7 +4,7 @@ $title = 'Page Revision';
 $head = array('title' => html_escape($title));
 head($head);
 ?>
-<h1><?php echo $head['title']; ?></h1>
+<h2><?php echo $head['title']; ?></h2>
 <div id="primary">
 
 <div id="scripto-history" class="scripto">

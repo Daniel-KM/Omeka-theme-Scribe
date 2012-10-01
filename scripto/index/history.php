@@ -4,7 +4,7 @@ $title = 'Page History';
 $head = array('title' => html_escape($title));
 head($head);
 ?>
-<h1><?php echo $head['title']; ?></h1>
+<h2>&nbsp&nbsp&nbsp&nbsp<?php echo $head['title']; ?></h2>
 <div id="primary">
 
 <div id="scripto-history" class="scripto">
@@ -67,6 +67,8 @@ head($head);
     </tbody>
 </table>
 <?php endif; ?>
+
 </div><!-- #scripto-history -->
+<?php foot(); ?>
 </div>
-<?php //foot(); ?>
+

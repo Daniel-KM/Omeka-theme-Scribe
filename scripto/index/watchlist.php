@@ -77,5 +77,5 @@ head($head);
 </table>
 <?php endif; ?>
 </div><!-- #scripto-watchlist -->
+<?php foot(); ?>
 </div>
-<?php //foot(); ?>

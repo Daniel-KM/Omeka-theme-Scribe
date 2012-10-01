@@ -31,7 +31,7 @@
                                  } else {
                                     $progress_value = item('Scripto', 'Status');
                                  }
-                                echo $progress_value . '% transcribed <br /><div class="progress progress-striped"><div class="bar" style="width:'.$progress_value.'%;"></div></div>'; ?>
+                                echo $progress_value . '% transcribed <br /><div class="progress"><div class="bar" style="width:'.$progress_value.'%;"></div></div>'; ?>
                         </div>
                     </div>    
                 </div>    

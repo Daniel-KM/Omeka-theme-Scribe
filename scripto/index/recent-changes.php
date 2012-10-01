@@ -92,5 +92,5 @@ head($head);
 </table>
 <?php endif; ?>
 </div><!-- #scripto-recent-changes -->
+<?php foot(); ?>
 </div>
-<?php //foot(); ?>

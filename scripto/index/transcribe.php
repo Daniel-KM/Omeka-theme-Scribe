@@ -7,6 +7,8 @@ head($head);
 <?php echo js('jquery'); ?>
 <script type="text/javascript">
 jQuery(document).ready(function() {
+    //remove funky pre tags in output
+$("pre").wrapInner('<div>').find('div').unwrap();
 
     jQuery('#scripto-transcription-edit').slideDown(0);
     
@@ -272,7 +274,7 @@ jQuery(document).ready(function() {
         <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a><span class="divider">/</span></li>
         <li><a href="<?php echo uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
         <li><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></li>
-        </ul>
+    </ul>
     <div id="scripto-transcribe" class="scripto">
              
             <h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?>Untitled Document<?php endif; ?></h2>
@@ -285,11 +287,11 @@ jQuery(document).ready(function() {
 
         <div class="row">
 
-            <div style="width: 98%;" class="span12">
+            
                 <?php echo display_file($this->file); ?>
-            </div>
+            
 
-            <div class="span12">
+            <div class="span11">
 
                 <div id="scripto-transcription">
 
@@ -301,7 +303,7 @@ jQuery(document).ready(function() {
                         <div class="alert alert-error">
                             <strong>This transcription is complete!</strong>
                         </div>
-                        <div id="scripto-transcription-page-html"><?php echo $this->transcriptionPageHtml; ?></div>
+                        <div id="scripto-transcription-page-html"><?php echo $this->transcriptionPageHtml; ?></div><br />
 
                         <?php else: ?>
                         <strong>Enter your transcription below:</strong>
@@ -309,6 +311,7 @@ jQuery(document).ready(function() {
                             <li>Copy the text as is, including misspellings and abbreviations.</li>
                             <li>No need to account for formatting (e.g. spacing, line breaks, alignment); the goal is to provide text for searching.</li>
                             <li>If you can’t make out a word, enter “[illegible]”; if uncertain, indicate with square brackets, e.g. “[town?]”</li>
+                            <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">View more transcription tips</a></li>
                         </ul>
                         <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span11')); ?></div>
                         <?php endif; ?>           
@@ -357,11 +360,67 @@ jQuery(document).ready(function() {
                             
                         </div><!-- #scripto-transcription-edit -->
 
+
                     <?php endif; ?>                    
                    
                 </div><!-- #scripto-transcription -->
+
+                    <?php //what a mess. had to sloppily add footer html here. blech. ?>
+
+                    <div id="footer">
+                         
+                       <div class="row2 span11">
+                        
+                        <hr />
+
+                          <div class="span3 bar about">
+
+                            <h3>About</h3>
+                            <ul>
+                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php">About the project</a></li>
+                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php#faq">FAQ</a></li>
+                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">Transcription tips</a></li>
+                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php#articles">Articles & presentations</a></li>
+                              <li><a href="http://www.lib.uiowa.edu/drp/contact.html">Contact Us</a></li>
+                            </ul>
+                          </div>
+                          <div class="span3 bar contribute">
+                            <h3>Contribute</h3>
+                            <ul>
+                              <li>Statistics-coming soon</li>
+                              <li><a href="http://diyhistory.lib.uiowa.edu/w/index.php/Special:AWCforum" target="parent">Discussion Forum</a></li>
+                            </ul>
+                          </div>
+                          <div class="span3 bar news">
+                            <h3>News</h3>
+                            <script src="http://feeds.feedburner.com/DiyHistory?format=sigpro" type="text/javascript" ></script>
+                            <noscript>
+                            <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/DigitalResearchPublishing"></a><br/>
+                              Powered by FeedBurner</p>
+                            </noscript>
+                          </div>
+                          <div class="span3 twitter">
+                            <h3>Tweets</h3>
+                            <script src="http://feeds.feedburner.com/Twitter/Uil_transcripts?format=sigpro" type="text/javascript" ></script>
+                            <noscript>
+                            <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/Twitter/Uil_transcripts"></a><br/>
+                              Powered by FeedBurner</p>
+                            </noscript>
+                          </div>
+                        </div>
+
+                    </div><!-- end footer -->
+                    
+                </div><!-- end wrap -->
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
-  <?php foot(); ?>
+
 
 
 
