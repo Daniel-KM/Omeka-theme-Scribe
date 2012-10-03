@@ -37,7 +37,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
 
-</script>
+    </script>
 
 
     <style>
@@ -83,7 +83,7 @@ h2 { color: #6A231F; }
                     <?php else: ?>
 
                     <li>
-                    <a href="/transcribe/scripto/login"><strong>Sign in</strong></a>                          
+                    <a href="/transcribe/scripto/login"><strong>Sign in or register</strong></a>                          
                     </li>
 
                     <?php endif; ?>

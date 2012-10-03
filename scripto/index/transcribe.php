@@ -373,7 +373,7 @@ $("pre").wrapInner('<div>').find('div').unwrap();
                         
                         <hr />
 
-                          <div class="span3 bar about">
+                          <div class="span3-linda bar-linda about">
 
                             <h3>About</h3>
                             <ul>
@@ -384,14 +384,14 @@ $("pre").wrapInner('<div>').find('div').unwrap();
                               <li><a href="http://www.lib.uiowa.edu/drp/contact.html">Contact Us</a></li>
                             </ul>
                           </div>
-                          <div class="span3 bar contribute">
+                          <div class="span3-tran bar-linda contribute">
                             <h3>Contribute</h3>
                             <ul>
-                              <li>Statistics-coming soon</li>
-                              <li><a href="http://diyhistory.lib.uiowa.edu/w/index.php/Special:AWCforum" target="parent">Discussion Forum</a></li>
+                              <li><strong>16,464</strong> documents transcribed!</li>
+                              <li><a href="http://diyhistory.lib.uiowa.edu/forum" target="parent">Discussion Forum</a></li>
                             </ul>
                           </div>
-                          <div class="span3 bar news">
+                          <div class="span3-tran bar-linda news">
                             <h3>News</h3>
                             <script src="http://feeds.feedburner.com/DiyHistory?format=sigpro" type="text/javascript" ></script>
                             <noscript>
@@ -399,7 +399,7 @@ $("pre").wrapInner('<div>').find('div').unwrap();
                               Powered by FeedBurner</p>
                             </noscript>
                           </div>
-                          <div class="span3 twitter">
+                          <div class="span3-tran twitter">
                             <h3>Tweets</h3>
                             <script src="http://feeds.feedburner.com/Twitter/Uil_transcripts?format=sigpro" type="text/javascript" ></script>
                             <noscript>
