@@ -25,6 +25,9 @@
     display_css();
     ?>
 
+    <?php include_once "transcribedcount.php"; ?>
+
+
     <script type="text/javascript">
 
           var _gaq = _gaq || [];

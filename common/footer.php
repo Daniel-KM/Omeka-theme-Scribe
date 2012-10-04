@@ -1,3 +1,4 @@
+        
         </div><!-- end content -->
 
         <div id="footer">
@@ -9,14 +10,13 @@
                   <li><a href="http://diyhistory.lib.uiowa.edu/about.php">About the project</a></li>
                   <li><a href="http://diyhistory.lib.uiowa.edu/about.php#faq">FAQ</a></li>
                   <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">Transcription tips</a></li>
-                  <li><a href="http://diyhistory.lib.uiowa.edu/about.php#articles">Articles & presentations</a></li>
-                  <li><a href="http://www.lib.uiowa.edu/drp/contact.html">Contact Us</a></li>
+                  <li><a href="http://www.lib.uiowa.edu/drp/contact.html">Contact us</a></li>
                 </ul>
               </div>
               <div class="span3-linda bar-linda contribute">
                 <h3>Contribute</h3>
                 <ul>
-                  <li><strong>16,464</strong> documents transcribed!</li>
+                  <li><strong><?php echo countDocs(); ?></strong> documents transcribed!</li>
                   <li><a href="http://diyhistory.lib.uiowa.edu/forum" target="parent">Discussion Forum</a></li>
                 </ul>
               </div>

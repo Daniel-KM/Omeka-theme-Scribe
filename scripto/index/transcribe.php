@@ -5,10 +5,11 @@ head($head);
 
 <?php echo js('OpenLayers'); ?>
 <?php echo js('jquery'); ?>
+
 <script type="text/javascript">
 jQuery(document).ready(function() {
     //remove funky pre tags in output
-$("pre").wrapInner('<div>').find('div').unwrap();
+    $("pre").wrapInner('<div>').find('div').unwrap();
 
     jQuery('#scripto-transcription-edit').slideDown(0);
     
@@ -265,10 +266,9 @@ $("pre").wrapInner('<div>').find('div').unwrap();
 });
 </script>
 
-
 <h1><?php echo $head['title']; ?></h1>
 
-<div id="primary" class="span11">
+<div id="primary" >
     
     <ul class="breadcrumb">
         <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a><span class="divider">/</span></li>
@@ -291,7 +291,7 @@ $("pre").wrapInner('<div>').find('div').unwrap();
                 <?php echo display_file($this->file); ?>
             
 
-            <div class="span11" style="margin-left: 0px;">
+            <div style="margin-left: 0px;">
 
                 <div id="scripto-transcription">
 
@@ -351,75 +351,25 @@ $("pre").wrapInner('<div>').find('div').unwrap();
                             </div>
 
                             <div>
-                            <?php $all_images = uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>
-                            <?php if (isset($this->paginationUrls['previous'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['previous']); ?>'">prev</button></a><?php else: ?><button type="submit" class="btn btn-mini">prev</button><?php endif; ?>
-                         |  <?php if (isset($this->paginationUrls['next'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['next']); ?>'">next</button></a><?php else: ?><button type="submit" class="btn btn-mini">next</button><?php endif; ?>
-                         |  <a><button class="btn btn-mini nav-btn" onClick="parent.location='<?php echo $all_images; ?>'">all images</button></a>
-                        
-                        </div>                            
-                            
-                        </div><!-- #scripto-transcription-edit -->
-
-
-                    <?php endif; ?>                    
-                   
-                </div><!-- #scripto-transcription -->
-
-                    <?php //what a mess. had to sloppily add footer html here. blech. ?>
-
-                    <div id="footer">
-                         
-                       <div class="row2 span11">
-                        
-                        <hr />
-
-                          <div class="span3-linda bar-linda about">
-
-                            <h3>About</h3>
-                            <ul>
-                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php">About the project</a></li>
-                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php#faq">FAQ</a></li>
-                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">Transcription tips</a></li>
-                              <li><a href="http://diyhistory.lib.uiowa.edu/about.php#articles">Articles & presentations</a></li>
-                              <li><a href="http://www.lib.uiowa.edu/drp/contact.html">Contact Us</a></li>
-                            </ul>
-                          </div>
-                          <div class="span3-tran bar-linda contribute">
-                            <h3>Contribute</h3>
-                            <ul>
-                              <li><strong>16,464</strong> documents transcribed!</li>
-                              <li><a href="http://diyhistory.lib.uiowa.edu/forum" target="parent">Discussion Forum</a></li>
-                            </ul>
-                          </div>
-                          <div class="span3-tran bar-linda news">
-                            <h3>News</h3>
-                            <script src="http://feeds.feedburner.com/DiyHistory?format=sigpro" type="text/javascript" ></script>
-                            <noscript>
-                            <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/DigitalResearchPublishing"></a><br/>
-                              Powered by FeedBurner</p>
-                            </noscript>
-                          </div>
-                          <div class="span3-tran twitter">
-                            <h3>Tweets</h3>
-                            <script src="http://feeds.feedburner.com/Twitter/Uil_transcripts?format=sigpro" type="text/javascript" ></script>
-                            <noscript>
-                            <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/Twitter/Uil_transcripts"></a><br/>
-                              Powered by FeedBurner</p>
-                            </noscript>
-                          </div>
-                        </div>
-
-                    </div><!-- end footer -->
+                                <?php $all_images = uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>
+                                <?php if (isset($this->paginationUrls['previous'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['previous']); ?>'">prev</button></a><?php else: ?><button type="submit" class="btn btn-mini">prev</button><?php endif; ?>
+                             |  <?php if (isset($this->paginationUrls['next'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['next']); ?>'">next</button></a><?php else: ?><button type="submit" class="btn btn-mini">next</button><?php endif; ?>
+                             |  <a><button class="btn btn-mini nav-btn" onClick="parent.location='<?php echo $all_images; ?>'">all images</button></a>
+                            </div>                            
+                      
+                    <?php endif; ?>                
                     
-                </div><!-- end wrap -->
+                </div><!-- scripto-transcription -->
 
-            </div>
+            </div><!--margin-left-->
 
-        </div>
+            <?php foot(); ?>
 
-    </div>
+        </div><!--row-->
 
-</div>
+    </div><!--scripto-transcribe-->
+
+</div> <!--primary-->
 
 
 
