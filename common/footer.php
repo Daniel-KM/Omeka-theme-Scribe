@@ -16,7 +16,7 @@
               <div class="span3-linda bar-linda contribute">
                 <h3>Contribute</h3>
                 <ul>
-                  <li><strong><?php echo countDocs(); ?></strong> documents transcribed!</li>
+                  <li><strong><?php echo countDocs(); ?></strong> pages transcribed</li>
                   <li><a href="http://diyhistory.lib.uiowa.edu/forum" target="parent">Discussion Forum</a></li>
                 </ul>
               </div>

@@ -268,108 +268,86 @@ jQuery(document).ready(function() {
 
 <h1><?php echo $head['title']; ?></h1>
 
-<div id="primary" >
-    
+<div id="primary">
     <ul class="breadcrumb">
         <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a><span class="divider">/</span></li>
         <li><a href="<?php echo uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
         <li><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></li>
     </ul>
     <div id="scripto-transcribe" class="scripto">
-             
-            <h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?>Untitled Document<?php endif; ?></h2>
-            
-            <div>
-                <div><strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong></div>
-                <div>image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
-                <div><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
-            </div>  
-            
+        <h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?>Untitled Document<?php endif; ?></h2>
+        <div>
+            <div><strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong></div>
+            <div>image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
+            <div><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
+        </div>
         <div class="row" style="margin-left: 0px;">
-
-            
-                <?php echo display_file($this->file); ?>
-            
-
+            <?php echo display_file($this->file); ?>
             <div style="margin-left: 0px;">
-
                 <div id="scripto-transcription">
-
                     <?php if ($this->doc->canEditTranscriptionPage()): ?>
-
-                    <div id="scripto-transcription-edit" class="content">
-                        <br />
-                        <?php if ($this->doc->isProtectedTranscriptionPage()): ?>
-                        <div class="alert alert-error">
-                            <strong>This transcription is complete!</strong>
-                        </div>
-                        <div id="scripto-transcription-page-html"><?php echo $this->transcriptionPageHtml; ?></div><br />
-
-                        <?php else: ?>
-                        <strong>Enter your transcription below:</strong>
-                        <ul class="tips">
-                            <li>Copy the text as is, including misspellings and abbreviations.</li>
-                            <li>No need to account for formatting (e.g. spacing, line breaks, alignment); the goal is to provide text for searching.</li>
-                            <li>If you can’t make out a word, enter “[illegible]”; if uncertain, indicate with square brackets, e.g. “[town?]”</li>
-                            <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">View more transcription tips</a></li>
-                        </ul>
-                        <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span11')); ?></div>
-                        <?php endif; ?>           
-                        
-                            <?php echo $this->formButton('scripto-transcription-page-edit','Save edits', array('class' => 'btn btn-primary')); ?> 
-                            <?php if ($this->scripto->canProtect()): ?><?php echo $this->formButton('scripto-transcription-page-protect','Approve', array('class' => 'btn btn-primary')); ?> <?php endif; ?>
-                            <?php if ($this->scripto->isLoggedIn()): ?><?php echo $this->formButton('scripto-page-watch', 'Watch', array('class' => 'btn btn-primary')); ?> <?php endif; ?>            
-
-                    </div>
-
-                        <div>
-                            <?php $all_images = uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>
-                            <?php if (isset($this->paginationUrls['previous'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['previous']); ?>'">prev</button></a><?php else: ?><button type="submit" class="btn btn-mini">prev</button><?php endif; ?>
-                         |  <?php if (isset($this->paginationUrls['next'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['next']); ?>'">next</button></a><?php else: ?><button type="submit" class="btn btn-mini">next</button><?php endif; ?>
-                         |  <a><button class="btn btn-mini nav-btn" onClick="parent.location='<?php echo $all_images; ?>'">all images</button></a>
-                        
-                        </div>
-
-                        <a href="#" id="scripto-page-show"></a>
-                        
-                    </div><!-- #scripto-transcription-edit -->
-
-                    <?php else: ?>
-
-                            <div id="scripto-transcription-edit" class="content">
-                                <br />
+                        <div id="scripto-transcription-edit" class="content">
+                            <br />
+                            <?php if ($this->doc->isProtectedTranscriptionPage()): ?>
                                 <div class="alert alert-error">
                                     <strong>This transcription is complete!</strong>
+                                </div><!--alert alert-error-->
+                                <div id="scripto-transcription-page-html">
+                                    <?php echo $this->transcriptionPageHtml; ?>
                                 </div>
-                                <div id="scripto-transcription-page-html"><?php echo $this->transcriptionPageHtml; ?></div>
-                                                      
-
-                                    <?php //echo $this->formButton('scripto-transcription-page-edit','Save edits', array('class' => 'btn btn-primary')); ?> 
-                                    <?php if ($this->scripto->canProtect()): ?><?php echo $this->formButton('scripto-transcription-page-protect','Approve', array('class' => 'btn btn-primary')); ?> <?php endif; ?>
-                                    <?php if ($this->scripto->isLoggedIn()): ?><?php echo $this->formButton('scripto-page-watch', 'Watch', array('class' => 'btn btn-primary')); ?> <?php endif; ?>            
-
+                                <br />
                             </div>
-
-                            <div>
+                            <?php else: ?>
+                                <strong>Enter your transcription below:</strong>
+                                <ul class="tips">
+                                    <li>Copy the text as is, including misspellings and abbreviations.</li>
+                                    <li>No need to account for formatting (e.g. spacing, line breaks, alignment); the goal is to provide text for searching.</li>
+                                    <li>If you can’t make out a word, enter “[illegible]”; if uncertain, indicate with square brackets, e.g. “[town?]”</li>
+                                    <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">View more transcription tips</a></li>
+                                </ul>
+                                <div>
+                                    <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span11')); ?>
+                                </div>
+                            </div>
+                            <?php endif; ?>
+                        <div id="formbuttonscanedit">
+                            <?php echo $this->formButton('scripto-transcription-page-edit','Save edits', array('class' => 'btn btn-primary')); ?> 
+                            <?php if ($this->scripto->canProtect()): ?><?php echo $this->formButton('scripto-transcription-page-protect','Approve', array('class' => 'btn btn-primary')); ?> <?php endif; ?>
+                            <?php if ($this->scripto->isLoggedIn()): ?><?php echo $this->formButton('scripto-page-watch', 'Watch', array('class' => 'btn btn-primary')); ?> <?php endif; ?>                 
+                        </div><!--formbuttonscanedit-->
+                        <div id="navbuttonscanedit">
+                            <?php $all_images = uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>
+                            <?php if (isset($this->paginationUrls['previous'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['previous']); ?>'">prev</button></a><?php else: ?><button type="submit" class="btn btn-mini">prev</button><?php endif; ?>
+                            |  <?php if (isset($this->paginationUrls['next'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['next']); ?>'">next</button></a><?php else: ?><button type="submit" class="btn btn-mini">next</button><?php endif; ?>
+                            |  <a><button class="btn btn-mini nav-btn" onClick="parent.location='<?php echo $all_images; ?>'">all images</button></a>
+                        </div><!--navbuttonscanedit-->
+                        </div><!--scripto-transcription-edit-->
+                    <?php else: ?>
+                        <div id="scripto-transcription-edit" class="content">
+                            <br />
+                            <div class="alert alert-error">
+                                <strong>This transcription is complete!</strong>
+                            </div><!--alert alert-error-->
+                            <div id="scripto-transcription-page-html">
+                                <?php echo $this->transcriptionPageHtml; ?>
+                            </div><!--scripto-transcription-page-html-->
+                            <?php if ($this->scripto->canProtect()): ?><?php echo $this->formButton('scripto-transcription-page-protect','Approve', array('class' => 'btn btn-primary')); ?> <?php endif; ?>
+                            <?php if ($this->scripto->isLoggedIn()): ?><?php echo $this->formButton('scripto-page-watch', 'Watch', array('class' => 'btn btn-primary')); ?> <?php endif; ?>  
+                            <div id="navbuttonscantedit">
                                 <?php $all_images = uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>
                                 <?php if (isset($this->paginationUrls['previous'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['previous']); ?>'">prev</button></a><?php else: ?><button type="submit" class="btn btn-mini">prev</button><?php endif; ?>
-                             |  <?php if (isset($this->paginationUrls['next'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['next']); ?>'">next</button></a><?php else: ?><button type="submit" class="btn btn-mini">next</button><?php endif; ?>
-                             |  <a><button class="btn btn-mini nav-btn" onClick="parent.location='<?php echo $all_images; ?>'">all images</button></a>
-                            </div>                            
-                      
-                    <?php endif; ?>                
-                    
-                </div><!-- scripto-transcription -->
-
-            </div><!--margin-left-->
-
-            <?php foot(); ?>
-
+                                |  <?php if (isset($this->paginationUrls['next'])): ?><a><button type="submit" class="btn btn-mini nav-btn" onClick="parent.location='<?php echo html_escape($this->paginationUrls['next']); ?>'">next</button></a><?php else: ?><button type="submit" class="btn btn-mini">next</button><?php endif; ?>
+                                |  <a><button class="btn btn-mini nav-btn" onClick="parent.location='<?php echo $all_images; ?>'">all images</button></a>
+                            </div>       
+                        </div><!--scripto-transcription-edit-->
+                    </div>    
+                    <?php endif; ?>
+                </div><!--scripto-transcription-->
+            </div><!--margin-left-->            
         </div><!--row-->
-
+        <?php foot(); ?>
     </div><!--scripto-transcribe-->
-
-</div> <!--primary-->
+</div><!--primary-->
 
 
 
