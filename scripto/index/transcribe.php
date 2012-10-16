@@ -167,6 +167,7 @@ jQuery(document).ready(function() {
                 }, 
                 function(data) {
                     jQuery('#scripto-transcription-page-protect').prop('disabled', false).text('Unapprove');
+                    location.reload();
                 }
             );
         } else {
@@ -181,6 +182,7 @@ jQuery(document).ready(function() {
                 }, 
                 function(data) {
                     jQuery('#scripto-transcription-page-protect').prop('disabled', false).text('Approve');
+                    location.reload();
                 }
             );
         }

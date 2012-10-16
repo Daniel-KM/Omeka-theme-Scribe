@@ -7,8 +7,8 @@ head($head);
 
 <!-- navigation -->
 <ul class="nav nav-tabs">
-	<li class="active"><a href="#">login page</a></li>
-	<li><a href="http://diyhistory.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup" target="parent">Create an account</a></li>
+	<li class="active"><a href="#">Login page</a></li>
+	<li><a href="http://diyhistory.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup" target="_blank">Create an account</a></li>
     <li><a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">Recent changes</a> 
     
 </ul>
