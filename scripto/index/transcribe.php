@@ -270,6 +270,12 @@ jQuery(document).ready(function() {
 
 <h1><?php echo $head['title']; ?></h1>
 
+<?php
+    $page_id = $this->doc->getId();
+    set_current_item(get_item_by_id($page_id));
+?>
+
+
 <div id="primary">
     <ul class="breadcrumb">
         <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a><span class="divider">/</span></li>
@@ -281,7 +287,8 @@ jQuery(document).ready(function() {
         <div>
             <div><strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong></div>
             <div>image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
-            <div><a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">view in Iowa Digital Library</a></div>
+            <div>more information: <a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">Iowa Digital Library</a> | <a href="<?php echo item('Dublin Core', 'Relation'); ?>" target="parent">collection guide</a></div>
+
         </div>
         <div class="row" style="margin-left: 0px;">
             <?php echo display_file($this->file); ?>

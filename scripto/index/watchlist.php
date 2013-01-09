@@ -30,6 +30,10 @@ head($head);
     <?php
     // changes
     $changes = ucfirst($revision['action']);
+    //added to match DRP language
+    if ($changes == "Un/protected") {
+        $changes = "Un/approved";
+    }
     $urlHistory = uri(array(
         'item-id' => $revision['document_id'], 
         'file-id' => $revision['document_page_id'], 

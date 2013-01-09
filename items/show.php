@@ -22,9 +22,14 @@
             $helper = new Omeka_View_Helper_Media;
             $files =  return_files_for_item(array());           
             echo '<ul class="thumbnails">';
+            
             foreach ($files as $file) {
                 $status = $scripto->getPageTranscriptionStatus($file->id);
-                 
+                /* uncomment to export all files in an item
+                $doc = $scripto->getDocument($file->item_id);
+                $doc->setPage($file->id);
+                $doc->exportPage('plain_text');
+                */                                
                 switch ($status) {
                 case 'Completed':
                     $label = "label-important";

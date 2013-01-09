@@ -22,17 +22,17 @@
               </div>
               <div class="span3-linda bar-linda news">
                 <h3>News</h3>
-                <script src="http://feeds.feedburner.com/DiyHistory?format=sigpro" type="text/javascript" ></script>
+                <script src="http://feeds.feedburner.com/diyhistory?format=sigpro" type="text/javascript" ></script>
                 <noscript>
                 <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/DigitalResearchPublishing"></a><br/>
                   Powered by FeedBurner</p>
                 </noscript>
               </div>
-              <div class="span3-linda twitter">
+              <div class="span3 twitter">
                 <h3>Tweets</h3>
-                <script src="http://feeds.feedburner.com/Twitter/Uil_transcripts?format=sigpro" type="text/javascript" ></script>
+                <script src="http://feeds.feedburner.com/Twitter/Diyhcivilwar?format=sigpro" type="text/javascript" ></script>
                 <noscript>
-                <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/Twitter/Uil_transcripts"></a><br/>
+                <p>Subscribe to RSS headline updates from: <a href="http://feeds.feedburner.com/Twitter/DIYHCivilWar"></a><br/>
                   Powered by FeedBurner</p>
                 </noscript>
               </div>
