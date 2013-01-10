@@ -45,8 +45,7 @@
                         <div id="col-progress">
                         <?php   
 
-                        // set statuses
-                        
+                        // set statuses                        
                         $progress_needs_review = item('Scripto', 'Percent Needs Review');
                         $progress_percent_completed = item('Scripto', 'Percent Completed');
                         $progress_status = $progress_needs_review + $progress_percent_completed;
@@ -61,7 +60,7 @@
                             $status_message = 'Completed';
                         } elseif ($progress_status == 100) {
                             $status_message = 'Needs Review';
-                        } elseif ($progress_status != NULL and $progress_status != 100) {
+                        } elseif ($progress_status != 0 and $progress_status != 100) {
                             $status_message = $progress_status . '% ' . 'Started';
                         } else {
                             $status_message = 'Not Started';
@@ -69,8 +68,8 @@
 
                         echo $status_message . '<br />
                         <div class="progress">
-                            <div class="bar bar-danger" style="width:'.$progress_percent_completed .'%;"></div>
-                            <div class="bar bar-warning" style="width:'.$progress_needs_review .'%;"></div>
+                            <div title="'.$progress_percent_completed.'% Completed" class="bar bar-danger" style="width:'.$progress_percent_completed .'%;"></div>
+                            <div title="'.$progress_needs_review.'% Needs Review" class="bar bar-warning" style="width:'.$progress_needs_review .'%;"></div>
                         </div>';
                         
                     ?>
