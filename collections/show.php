@@ -25,6 +25,20 @@
                 
         <ul class="thumbnails">
 
+        <?php
+            /*
+            //initialize items
+            require_once './././plugins/Scripto/ScriptoPlugin.php'; 
+            $itemids = array(1748); //replace numbers in this array with item ids
+            foreach ($itemids as $itemid) {
+                $scripto = ScriptoPlugin::getScripto();
+                $doc = $scripto->getDocument($itemid);
+                //$doc->setDocumentTranscriptionProgress(); //leave commented if just setting sort weight
+                //$doc->setItemSortWeight();
+            }
+             */          
+        ?>  
+
         <?php 
         if (collection('Name') == "Iowa Women’s Lives: Letters and Diaries") {
             set_items_for_loop(get_items(array('sort_field' => 'Dublin Core,Alternative Title','sort_dir' => 'd', 'collection' => collection('id')), 999));
@@ -33,15 +47,14 @@
         }
         
         while (loop_items()):  
-        get_current_item();
-                       
+        get_current_item();                       
         ?> 
             <?php if (item_has_thumbnail()): ?>
             <li>
                 <div id="col-images" class="thumbnail right-caption span4">
                     <?php echo link_to_item(item_square_thumbnail(array('alt'=>item('Dublin Core', 'Title'),'class'=>'span2'))); ?>
                     <div class="caption">
-                        <?php echo link_to_item(item('Dublin Core', 'Title', array('snippet' => 65)), array('class'=>'permalink')); ?><br /><br />
+                        <?php echo link_to_item(item('Dublin Core', 'Title', array('snippet' => 60)), array('class'=>'permalink')); ?><br /><br />
                         <div id="col-progress">
                         <?php   
 
