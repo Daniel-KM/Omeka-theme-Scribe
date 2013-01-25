@@ -14,8 +14,8 @@ head($head);
 <?php if ($this->homePageText): ?>
 <?php echo $this->homePageText ?>
 <?php else: ?>
-<h2>Welcome to DIY|History</h2>
-<p>As a registered transcriber you can track your contributions, create a watchlist of your favorite pages, and leave comments on each page. Active transcribers can earn Expert Transcriber privileges to finalize pending transcriptions and correct errors in completed transcriptions.</p>
+<h2>Scribe: an Omeka theme</h2>
+<p>Put your welcoming text here.</p>
 <?php endif; ?>
 <?php else: ?>
 <h2>Your Contributions</h2>

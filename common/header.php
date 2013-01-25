@@ -23,48 +23,24 @@
     queue_css('font-awesome');
     queue_css('style');
     display_css();
+    $js_dir =  'http://'.$_SERVER['HTTP_HOST'] . '/' . basename(getcwd()) . '/themes/scribe/javascripts/';
     ?>
 
-    <?php include_once "transcribedcount.php"; ?>
-
-
-    <script type="text/javascript">
-
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-783364-57']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-
-    </script>
-
-
-    <style>
-        .masthead { height: 100px; background-color: #FFF; margin: 0; padding: 10; background-image: url(../images/background.gif); }
-        #sublinks ul {  margin: 0; float: right; }
-        
-        #sublinks a { color: #6A231F; font-size: .9em; font-weight: bold; }
-        #content { background-color: #fff; padding: 10px 20px; margin-top: 20px; }
-h2 { color: #6A231F; }
-        h2 { color: #6A231F; }
-</style>
-
     <!-- JavaScripts -->
-    <?php display_js(); ?>   
-
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo $js_dir; ?>bootstrap.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="<?php echo $js_dir; ?>jquery.bxSlider.min.js" charset="utf-8"></script>
 
 </head>
 
-<?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); 
-    require_once './././plugins/Scripto/libraries/Scripto.php';
+<?php 
+    echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); 
+    $base_dir = basename(getcwd());
+    require_once getcwd().'/plugins/Scripto/libraries/Scripto.php';
     $scripto = ScriptoPlugin::getScripto();
-?>
-    
+?>  
+
     <div class="container">
 
         <div id="sublinks" class="masthead clearfix">
@@ -76,29 +52,24 @@ h2 { color: #6A231F; }
                     <?php if ($scripto->isLoggedIn()): ?>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><?php echo $scripto->getUserName(); ?></strong><b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/transcribe/scripto">Your Contributions</a></li>
-                            <li><a href="/transcribe/scripto/watchlist">Your Watchlist</a></li>
-                            <li><a href="/transcribe/scripto/recent-changes">Recent Changes</a></li>
-                            <li><a href="/transcribe/scripto/logout">Logout</a></li>
+                            <li><a href="/<?php echo $base_dir; ?>/scripto">Your Contributions</a></li>
+                            <li><a href="/<?php echo $base_dir; ?>/scripto/watchlist">Your Watchlist</a></li>
+                            <li><a href="/<?php echo $base_dir; ?>/scripto/recent-changes">Recent Changes</a></li>
+                            <li><a href="/<?php echo $base_dir; ?>/scripto/logout">Logout</a></li>
                         </ul>
                     </li>
 
                     <?php else: ?>
 
                     <li>
-                    <a href="/transcribe/scripto/login"><strong>Sign in or register</strong></a>                          
+                    <a href="/<?php echo $base_dir; ?>/scripto/login"><strong>Sign in or register</strong></a>                          
                     </li>
 
                     <?php endif; ?>
                 </ul>
     
-            <img src="/images/sub.png" alt="DIY History at The University of Iowa Libraries" title="DIY History at The University of Iowa Libraries" width="960" height="80" border="0" usemap="#Map">
-            <map name="Map">
-              <area shape="rect" coords="781,30,952,77" href="http://www.lib.uiowa.edu/" alt="The University of Iowa Libraries" title="The University of Iowa Libraries">
-              <area shape="rect" coords="393,25,568,67" href="http://diyhistory.lib.uiowa.edu/transcribe" alt="Transcribe" title="Transcribe">
-              <area shape="rect" coords="9,4,370,75" href="http://diyhistory.lib.uiowa.edu" alt="DIY History Home" title="DIY History Home">
-            </map>
+            <a href="/<?php echo $base_dir; ?>"><img src="<?php echo img('sub.png'); ?>" alt="Scribe: an Omeka theme" title="Scribe: an Omeka theme" width="960" height="80" border="0"></a>
       </div>           
 
 </div><!-- end header -->
-<hr />
+<br /><br />

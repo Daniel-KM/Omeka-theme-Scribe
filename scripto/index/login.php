@@ -8,7 +8,11 @@ head($head);
 <!-- navigation -->
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#">Login page</a></li>
-	<li><a href="http://diyhistory.lib.uiowa.edu/w/index.php5?title=Special:UserLogin&type=signup" target="_blank">Create an account</a></li>
+    <!--
+    mediawiki doesn't offer account creation through their API. You must link directly to the page in your installation
+    /my_mediawiki_install_directory/index.php5?title=Special:UserLogin&type=signup 
+    -->
+	<li><a href="#" target="_blank">Create an account</a></li> 
     <li><a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">Recent changes</a> 
     
 </ul>

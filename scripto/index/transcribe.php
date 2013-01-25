@@ -275,10 +275,11 @@ jQuery(document).ready(function() {
     set_current_item(get_item_by_id($page_id));
 ?>
 
-
+<?php $base_dir = basename(getcwd()); ?>
 <div id="primary">
     <ul class="breadcrumb">
-        <li><a href="http://diyhistory.lib.uiowa.edu/transcribe/">Home</a><span class="divider">/</span></li>
+        <li><a href="/<?php echo $base_dir; ?>">Home</a><span class="divider">/</span></li>
+        <li><a href="<?php echo uri('collections'); ?>"></a></li>
         <li><a href="<?php echo uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
         <li><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></li>
     </ul>
@@ -287,7 +288,10 @@ jQuery(document).ready(function() {
         <div>
             <div><strong><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></strong></div>
             <div>image <?php echo html_escape($this->paginationUrls['current_page_number']); ?> of <?php echo html_escape($this->paginationUrls['number_of_pages']); ?></div>
-            <div>more information: <a href="<?php echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>" target="parent">Iowa Digital Library</a> | <a href="<?php echo item('Dublin Core', 'Relation'); ?>" target="parent">collection guide</a></div>
+            <div>
+                <?php //echo $this->fileMetadata($file, 'Dublin Core', 'Source'); ?>
+                <?php //echo item('Dublin Core', 'Relation'); ?>
+            </div>
 
         </div>
         <div class="row" style="margin-left: 0px;">
@@ -307,13 +311,9 @@ jQuery(document).ready(function() {
                                 <br />
                             </div>
                             <?php else: ?>
-                                <strong>Enter your transcription below:</strong>
-                                <ul class="tips">
-                                    <li>Copy the text as is, including misspellings and abbreviations.</li>
-                                    <li>No need to account for formatting (e.g. spacing, line breaks, alignment); the goal is to provide text for searching.</li>
-                                    <li>If you can’t make out a word, enter “[illegible]”; if uncertain, indicate with square brackets, e.g. “[town?]”</li>
-                                    <li><a href="http://diyhistory.lib.uiowa.edu/about.php#tips">View more transcription tips</a></li>
-                                </ul>
+                                <div class="alert alert-info">
+                                    <strong>This item is editable!</strong>
+                                </div><!--alert alert-info-->
                                 <div>
                                     <?php echo $this->formTextarea('scripto-transcription-page-wikitext', $this->doc->getTranscriptionPageWikitext(), array('cols' => '76', 'rows' => '6', 'class' => 'span11')); ?>
                                 </div>
