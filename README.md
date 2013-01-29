@@ -1,4 +1,4 @@
 Scribe
 ===========
 
-Scribe is a theme made for use with the xxxx plugin forked from Scripto
+Scribe is an Omeka theme made for use with a customized Scripto plugin fork. Instructions and documentation forthcoming.
