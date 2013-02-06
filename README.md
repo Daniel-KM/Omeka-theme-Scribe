@@ -16,8 +16,12 @@ As an Omeka theme, it follows the standard Zend Framework view structure. Each f
 Therefore:
  
 	themes/scribe 
-will override 
+
+will override
+
 	application/views/scripts
+
+<strong>Files of note:</strong>
 
 	config.ini
 Adds a custom field to the theme configuration page in the admin panel. Collection order for the index page can be set here by providing a comma delimited list of collection ids.
