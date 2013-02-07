@@ -21,7 +21,7 @@ error_reporting(E_ALL);
       
       $collection = get_collection_by_id($collectionID);
       $collection_link = link_to_collection($collectionTitle, array(), 'show', $collection);
-      $collection_items = get_items(array('collection' => $collection['id']),9000);
+      $collection_items = get_items(array('sort_field' => 'Dublin Core,Audience','sort_dir' => 'a','collection' => $collection['id']),9000);
       $num_of_collection_items = count($collection_items); 
       set_items_for_loop($collection_items);
       $collection_item_list = array();
