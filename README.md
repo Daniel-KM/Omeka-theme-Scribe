@@ -1,7 +1,7 @@
 Scribe
 ===========
 
-Scribe is an Omeka 1.5 theme built on top of the styleless, barebones From Scratch theme provided on the [Omeka.org website](http://omeka.org/add-ons/themes/from-scratch/). It uses the Twitter Bootstrap front-end framework and depends on the forked [plugin-Scripto](https://github.com/ui-libraries/plugin-Scripto) plugin. The goal of Scribe is to provide a clean, thumbnail-oriented transcription view for any number of Omeka image collections. Its focus is on guiding users to easy transcription tasks rather than collection management features.
+Scribe is an Omeka 1.5 theme built on top of the styleless, barebones From Scratch theme provided on the [Omeka.org website](http://omeka.org/add-ons/themes/from-scratch/). It uses the Twitter Bootstrap front-end framework and depends on the forked [plugin-Scripto](https://github.com/ui-libraries/plugin-Scripto) plugin. The goal of Scribe is to provide a clean, thumbnail-oriented transcription view for any number of Omeka image collections. Its focus is on guiding users to easy transcription tasks rather than collection management features. Visit http://diyhistory.lib.uiowa.edu/code.html for an overview of the technology stack and implementation information.
 
 Scribe makes use of several jQuery plugins and components.
  
