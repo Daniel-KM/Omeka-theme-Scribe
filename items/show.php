@@ -1,6 +1,23 @@
 <?php head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
 <?php $base_dir = basename(getcwd()); ?>
-<?php $collection = get_collection_for_item(); ?>
+<?php $collection = get_collection_for_item(); 
+
+//these functions supplement ItemFunctions.php and FileFunctions.php in application/helpers
+function return_file($file, array $props=array(), $wrapperAttributes = array('class'=>'item-file'))
+{
+    return get_files(array($file), $props, $wrapperAttributes);
+}
+
+function return_files_for_item($options = array(), $wrapperAttributes = array('class'=>'item-file'), $item = null)
+{
+    if(!$item) {
+        $item = get_current_item();
+    }
+
+    return return_files($item->Files, $options, $wrapperAttributes);
+}
+
+?>
 
 <div id="primary">
     <ul class="breadcrumb">
