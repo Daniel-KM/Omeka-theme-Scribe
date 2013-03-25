@@ -3,7 +3,7 @@
 <?php $collection = get_collection_for_item(); 
 
 //these functions supplement ItemFunctions.php and FileFunctions.php in application/helpers
-function return_file($file, array $props=array(), $wrapperAttributes = array('class'=>'item-file'))
+function return_files($file, array $props=array(), $wrapperAttributes = array('class'=>'item-file'))
 {
     return get_files(array($file), $props, $wrapperAttributes);
 }
