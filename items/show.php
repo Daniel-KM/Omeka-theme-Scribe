@@ -1,11 +1,16 @@
-<?php head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
+<?php 
+head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
 <?php $base_dir = basename(getcwd()); ?>
 <?php $collection = get_collection_for_item(); 
 
 //these functions supplement ItemFunctions.php and FileFunctions.php in application/helpers
-function return_files($file, array $props=array(), $wrapperAttributes = array('class'=>'item-file'))
+function return_files($files, array $props = array(), $wrapperAttributes = array('class'=>'item-file'))
 {
-    return get_files(array($file), $props, $wrapperAttributes);
+    $basedir = getcwd();
+    require_once $basedir.'/application/helpers/Media.php';
+    $helper = new Omeka_View_Helper_Media;
+    return $files;
+    
 }
 
 function return_files_for_item($options = array(), $wrapperAttributes = array('class'=>'item-file'), $item = null)
@@ -18,6 +23,7 @@ function return_files_for_item($options = array(), $wrapperAttributes = array('c
 }
 
 ?>
+
 
 <div id="primary">
     <ul class="breadcrumb">
@@ -38,7 +44,8 @@ function return_files_for_item($options = array(), $wrapperAttributes = array('c
             require_once $basedir.'/application/helpers/Media.php';
             $scripto = ScriptoPlugin::getScripto();
             $helper = new Omeka_View_Helper_Media;
-            $files =  return_files_for_item(array());           
+            $files =  return_files_for_item(array());
+
             echo '<ul class="thumbnails">';
             
             foreach ($files as $file) {
