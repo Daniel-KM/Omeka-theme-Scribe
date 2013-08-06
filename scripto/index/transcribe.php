@@ -1,4 +1,5 @@
 <?php
+$title = $this->doc->getTitle();
 $head = array('title' => html_escape($title));
 head($head);
 ?>
