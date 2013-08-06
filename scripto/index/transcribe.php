@@ -269,8 +269,6 @@ jQuery(document).ready(function() {
 });
 </script>
 
-<h1><?php echo $head['title']; ?></h1>
-
 <?php
     $page_id = $this->doc->getId();
     set_current_item(get_item_by_id($page_id));
