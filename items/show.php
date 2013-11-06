@@ -1,56 +1,35 @@
-<?php 
-head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
-<?php $base_dir = basename(getcwd()); ?>
-<?php $collection = get_collection_for_item(); 
+<?php
+echo head(array(
+    'title' => metadata('item', array('Dublin Core', 'Title')),
+    'bodyclass' => 'items show',
+));
 
-//these functions supplement ItemFunctions.php and FileFunctions.php in application/helpers
-function return_files($files, array $props = array(), $wrapperAttributes = array('class'=>'item-file'))
-{
-    $basedir = getcwd();
-    require_once $basedir.'/application/helpers/Media.php';
-    $helper = new Omeka_View_Helper_Media;
-    return $files;
-    
-}
-
-function return_files_for_item($options = array(), $wrapperAttributes = array('class'=>'item-file'), $item = null)
-{
-    if(!$item) {
-        $item = get_current_item();
-    }
-
-    return return_files($item->Files, $options, $wrapperAttributes);
-}
-
+$collection = get_collection_for_item();
 ?>
-
-
 <div id="primary">
     <ul class="breadcrumb">
-      <li><a href="/<?php echo $base_dir; ?>">Home</a> <span class="divider">/</span></li>
+      <li><?php echo link_to_home_page(); ?><span class="divider">/</span></li>
       <li><?php echo link_to_collection_for_item($collection->name, array('id' => 'item-collection-link',)); ?><span class="divider">/</span></li>
-      <li class="active"><?php echo item('Dublin Core', 'Title'); ?></li>
+      <li class="active"><?php echo metadata('item', array('Dublin Core', 'Title')); ?></li>
     </ul>
 
-    <h1><?php echo item('Dublin Core', 'Title'); ?></h1>
+    <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
     <!-- The following returns all of the files associated with an item. -->
     <div id="itemfiles" class="element">
-        
-        <div class="element-text">
-            <?php 
-            $basedir = getcwd();
-            require_once $basedir.'/plugins/Scripto/libraries/Scripto.php';
-            require_once $basedir.'/application/helpers/Media.php';
-            $scripto = ScriptoPlugin::getScripto();
-            $helper = new Omeka_View_Helper_Media;
-            $files =  return_files_for_item(array());
 
-            echo '<ul class="thumbnails">';
-            
-            foreach ($files as $file) {
+        <div class="element-text">
+            <?php
+            require_once PLUGIN_DIR . '/Scripto/libraries/Scripto.php';
+           // require_once APP_DIR . '/helpers/Media.php';
+            $scripto = ScriptoPlugin::getScripto();
+            // $helper = new Omeka_View_Helper_Media;
+            $files =  return_files_for_item(array()); ?>
+
+            <ul class="thumbnails">
+            <?php foreach ($files as $file) :
                 $status = $scripto->getPageTranscriptionStatus($file->id);
-            
+
                 switch ($status) {
                 case 'Completed':
                     $label = "label-important";
@@ -60,32 +39,31 @@ function return_files_for_item($options = array(), $wrapperAttributes = array('c
                     break;
                 case 'Not Started':
                     $label = "label-success";
-                    break;                
+                    break;
                 default:
                     $label = "label-important";
                     break;
-                } 
+                }
 
-                 $fileTitle = $this->fileMetadata($file, 'Dublin Core', 'Title');
-                 //using monospaced font to make this work
+                 $fileTitle = metadata($file, array('Dublin Core', 'Title'));
+                 // Using monospaced font to make this work
                  if (strlen($fileTitle) <= 18) {
                     $fileTitle .= '<br /><br /><br />';
                  } elseif (strlen($fileTitle) <= 36 ) {
                      $fileTitle .= '<br /><br />';
                  }
-                 echo '   <li class="span2">';
-                 echo '       <div class="thumbnail">';
-                 echo '           <a href="/'.$base_dir.'/scripto/transcribe/'.$file->item_id.'/'.$file->id.'"><img src="/'.$base_dir.'/archive/square_thumbnails/' . $file->archive_filename . '" /></a>';
-                 echo '           <h4>'.$fileTitle.'</h4>';
-                 echo '           <span class="label '.$label.'">'.$status.'</span>';
-                 echo '       </div>';
-                 echo '   </li>';
-
-            }
-
-            echo '</ul>';
-
-            ?>
+             ?>
+                <li class="span2">
+                    <div class="thumbnail">
+                        <a href="<?php echo WEB_ROOT . '/scripto/transcribe/' . $file->item_id . '/' . $file->id; ?>">
+                            <img src="<?php echo WEB_FILES . '/square_thumbnails/' . $file->filename; ?>" />
+                        </a>
+                        <h4><?php echo $fileTitle; ?></h4>
+                        <span class="label <?php echo $label; ?>"><?php echo $status; ?></span>
+                     </div>
+                 </li>
+            <?php endforeach; ?>
+            </ul>
         </div>
     </div>
-<?php foot(); ?>
+<?php echo foot(); ?>
