@@ -189,7 +189,8 @@ jQuery(document).ready(function() {
                     page_action: 'protect',
                     page: 'transcription',
                     item_id: <?php echo js_escape($this->doc->getId()); ?>,
-                    file_id: <?php echo js_escape($this->doc->getPageId()); ?>
+                    file_id: <?php echo js_escape($this->doc->getPageId()); ?>,
+                    wikitext: jQuery('#scripto-transcription-page-wikitext').val()
                 },
                 function(data) {
                     jQuery('#scripto-transcription-page-protect').
