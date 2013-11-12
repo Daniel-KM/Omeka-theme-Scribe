@@ -33,8 +33,9 @@
 
     <!-- JavaScripts -->
     <?php
-    queue_js_url('https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
-    queue_js_url('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js');
+    // jQuery is enabled by default in Omeka and in most themes.
+    // queue_js_url('https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
+    // queue_js_url('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js');
     queue_js_file(array(
         'bootstrap.min',
         'jquery.bxSlider.min',

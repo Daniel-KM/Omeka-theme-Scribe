@@ -2,9 +2,12 @@
 $titleArray = array(__('Scripto'), __('Transcribe Page'));
 $head = array('title' => html_escape(implode(' | ', $titleArray)));
 echo head($head);
+if (get_option('scripto_image_viewer') == 'openlayers') {
+    echo js_tag('OpenLayers');
+    // jQuery is enabled by default in Omeka and in most themes.
+    // echo js_tag('jquery', 'javascripts/vendor');
+}
 ?>
-<?php echo js_tag('OpenLayers'); ?>
-<?php echo js_tag('jquery', 'javascripts/vendor'); ?>
 <script type="text/javascript">
 jQuery(document).ready(function() {
 
