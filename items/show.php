@@ -55,7 +55,7 @@ $collection = get_collection_for_item();
              ?>
                 <li class="span2">
                     <div class="thumbnail">
-                        <a href="<?php echo WEB_ROOT . '/scripto/transcribe/' . $file->item_id . '/' . $file->id; ?>">
+                        <a href="<?php echo url(array('action' => 'transcribe', 'item-id' => $file->item_id, 'file-id' => $file->id), 'scripto_action_item_file'); ?>">
                             <img src="<?php echo WEB_FILES . '/square_thumbnails/' . $file->filename; ?>" />
                         </a>
                         <h4><?php echo $fileTitle; ?></h4>
