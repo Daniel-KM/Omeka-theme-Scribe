@@ -39,17 +39,12 @@ if ($collectionTitle == '') {
                         <?php echo link_to_item(metadata($item, array('Dublin Core', 'Title'), array('snippet' => 60)), array('class'=>'permalink')); ?><br /><br />
                         <div id="col-progress">
                             <?php
-                                // set statuses
-                                $progress_needs_review = metadata('item', array('Scripto', 'Percent Needs Review'));
-                                $progress_percent_completed = metadata('item', array('Scripto', 'Percent Completed'));
+                                // Set statuses.
+                                $progress_needs_review = (int) metadata($item, array('Scripto', 'Percent Needs Review'));
+                                $progress_percent_completed = (int) metadata($item, array('Scripto', 'Percent Completed'));
                                 $progress_status = $progress_needs_review + $progress_percent_completed;
 
-                                if ($progress_status == null) {
-                                    $progress_status = 0;
-                                }
-                                $progress_not_started = 100 - $progress_status;
-
-                                // set status messages
+                                // Set status messages.
                                 if ($progress_percent_completed == 100) {
                                     $status_message = __('Completed');
                                 } elseif ($progress_status == 100) {
