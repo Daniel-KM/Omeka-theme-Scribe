@@ -24,7 +24,7 @@ error_reporting(E_ALL);
         $collection_items = get_records('Item',
             array(
                 'collection' => $collection['id'],
-                'sort_field' => 'Dublin Core,Audience',
+                'sort_field' => 'Scripto,Weight',
                 'sort_dir' => 'a',
             ),
             999);

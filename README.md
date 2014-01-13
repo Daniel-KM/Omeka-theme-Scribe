@@ -51,7 +51,7 @@ on each page.
 
 * collection/show.php
 This file displays all items in the collection. The set_items_for_loop function
-sorts based on the sort weight number set in the Dublin Core: Audience field.
+sorts based on the sort weight number set in the Scripto:Weight field.
 Progress bar logic is determined by reading the Scripto metadata fields ‘Percent
 Needs Review’ and ‘Percent Completed’. Stacked progress bars are set with the
 resulting numbers.
@@ -110,7 +110,7 @@ Current maintainers:
 
 This theme From Scratch has been built by [Center for History & New Media].
 [University of Iowa Libraries] has forked it to integrate its plugin Scripto.The
-fork of this theme has been upgraded for Omeka 2.0 for [Mines ParisTech].
+fork of this theme has been upgraded for Omeka 2.0 for [École des Mines ParisTech].
 
 
 Copyright
@@ -118,7 +118,7 @@ Copyright
 
 * Copyright Center for History and New Media, 2008-2012
 * Copyright Matthew Butler, 2012-2013 [mbutler]
-* Copyright Daniel Berthereau, 2013 [Daniel-KM]
+* Copyright Daniel Berthereau, 2013-2014 [Daniel-KM]
 
 
 [Omeka]: https://omeka.org
@@ -135,4 +135,4 @@ Copyright
 [University of Iowa Libraries]: http://www.lib.uiowa.edu
 [Daniel-KM]: https://github.com/Daniel-KM "Daniel Berthereau"
 [mbutler]: https://github.com/mbutler
-[Mines ParisTech]: http://bib.mines-paristech.fr "Mines ParisTech / ENSMP"
+[École des Mines ParisTech]: http://bib.mines-paristech.fr
