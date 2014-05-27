@@ -272,13 +272,15 @@ jQuery(document).ready(function() {
 <?php
     $page_id = $this->doc->getId();
     set_current_item(get_item_by_id($page_id));
+    $collection = get_collection_for_item();
+    $collection_link = link_to_collection_for_item();
 ?>
 
 <?php $base_dir = basename(getcwd()); ?>
 <div id="primary">
     <ul class="breadcrumb">
         <li><a href="/<?php echo $base_dir; ?>">Home</a><span class="divider">/</span></li>
-        <li><a href="<?php echo uri('collections'); ?>"></a></li>
+        <li><?php echo $collection_link; ?><span class="divider">/</span></li>
         <li><a href="<?php echo uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
         <li><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></li>
     </ul>
