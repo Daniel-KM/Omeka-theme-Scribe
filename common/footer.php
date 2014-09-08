@@ -7,8 +7,7 @@
             </nav>
 
             <div class="footer">
-                <?php $base_dir = basename(getcwd()); ?>
-                <a href="/<?php echo $base_dir; ?>"><img src="<?php echo img('sub.png'); ?>" alt="Scribe: an Omeka theme" title="Scribe: an Omeka theme" width="960" height="80" border="0"></a>
+                <a href="<?php echo WEB_ROOT; ?>"><img src="<?php echo img('sub.png'); ?>" alt="Scribe: an Omeka theme" title="Scribe: an Omeka theme" width="960" height="80" border="0"></a>
             </div>
 
             <div id="footer-text">

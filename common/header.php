@@ -46,7 +46,6 @@
 
 <?php
     echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass));
-    $base_dir = basename(getcwd());
     require_once getcwd().'/plugins/Scripto/libraries/Scripto.php';
     $scripto = ScriptoPlugin::getScripto();
 ?>
@@ -62,23 +61,23 @@
                     <?php if ($scripto->isLoggedIn()): ?>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><?php echo $scripto->getUserName(); ?></strong><b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/<?php echo $base_dir; ?>/scripto">Your Contributions</a></li>
-                            <li><a href="/<?php echo $base_dir; ?>/scripto/watchlist">Your Watchlist</a></li>
-                            <li><a href="/<?php echo $base_dir; ?>/scripto/recent-changes">Recent Changes</a></li>
-                            <li><a href="/<?php echo $base_dir; ?>/scripto/logout">Logout</a></li>
+                            <li><a href="<?php echo WEB_ROOT; ?>/scripto">Your Contributions</a></li>
+                            <li><a href="<?php echo WEB_ROOT; ?>/scripto/watchlist">Your Watchlist</a></li>
+                            <li><a href="<?php echo WEB_ROOT; ?>/scripto/recent-changes">Recent Changes</a></li>
+                            <li><a href="<?php echo WEB_ROOT; ?>/scripto/logout">Logout</a></li>
                         </ul>
                     </li>
 
                     <?php else: ?>
 
                     <li>
-                    <a href="/<?php echo $base_dir; ?>/scripto/login"><strong>Sign in or register</strong></a>
+                    <a href="<?php echo WEB_ROOT; ?>/scripto/login"><strong>Sign in or register</strong></a>
                     </li>
 
                     <?php endif; ?>
                 </ul>
 
-                <a href="/<?php echo $base_dir; ?>"><img src="<?php echo img('sub.png'); ?>" alt="Scribe: an Omeka theme" title="Scribe: an Omeka theme" width="960" height="80" border="0"></a>
+                <a href="<?php echo WEB_ROOT; ?>"><img src="<?php echo img('sub.png'); ?>" alt="Scribe: an Omeka theme" title="Scribe: an Omeka theme" width="960" height="80" border="0"></a>
             </div>
 
         </header><!-- end header -->
