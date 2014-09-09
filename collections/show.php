@@ -69,5 +69,4 @@ if ($collectionTitle == '') {
         <?php endforeach; ?>
         </ul>
     </div><!-- end collection-items -->
-</div><!-- end primary -->
 <?php echo foot(); ?>
