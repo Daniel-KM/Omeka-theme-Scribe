@@ -1,74 +1,82 @@
 <?php
-$title = 'Page History';
-//$title .= (1 == $this->namespaceIndex) ? 'Discussion' : 'Transcription';
+$titleArray = array(__('Scripto'), __('Page History'));
+$titleArray[] = (1 == $this->namespaceIndex) ? __('Discussion') : __('Transcription');
+$title = implode(' | ', $titleArray);
 $head = array('title' => html_escape($title));
-head($head);
+echo head($head);
 ?>
-<h2>&nbsp&nbsp&nbsp&nbsp<?php echo $head['title']; ?></h2>
-<div id="primary">
-
-<div id="scripto-history" class="scripto">
-<!-- navigation -->
-
-<ul class="nav nav-tabs">
-    <li><a href="<?php echo html_escape(uri('scripto/recent-changes')); ?>">Recent changes</a> 
-    <li><a href="<?php echo html_escape(uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id')); ?>">View document</a></li>
-    <li><a href="<?php echo html_escape(uri(array('controller' => 'files', 'action' => 'show', 'id' => $this->doc->getPageId()), 'id')); ?>">View file</a></li>
-    <li class="active"><a href="<?php echo html_escape(uri(array('item-id' => $this->doc->getId(), 'file-id' => $this->doc->getPageId(), 'namespace-index' => $this->namespaceIndex), 'scripto_history')); ?>">View history</a></li>
-    <li><a href="<?php echo html_escape(uri(array('action' => 'transcribe', 'item-id' => $this->doc->getId(), 'file-id' => $this->doc->getPageId()), 'scripto_action_item_file')); ?>">Transcribe page</a></li>
-</ul>
-
-<h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?>Untitled Document<?php endif; ?></h2>
-<h3><?php echo $this->doc->getPageName(); ?></h3>
-
-<!-- page history -->
-<?php if (empty($this->history)): ?>
-<p>This page has not yet been created.</p>
-<?php else: ?>
-<table class="table table-condensed table-striped table-bordered">
-    <thead>
-    <tr>
-        <th>Compare Changes</th>
-        <th>Changed on</th>
-        <th>Changed by</th>
-        <th>Size (bytes)</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($this->history as $revision): ?>
-    <?php
-    $urlCurrent = uri(array('item-id' => $this->doc->getId(), 
-                            'file-id' => $this->doc->getPageId(), 
-                            'namespace-index' => $this->namespaceIndex, 
-                            'old-revision-id' => $revision['revision_id'], 
-                            'revision-id' => $this->info['last_revision_id']), 
-                      'scripto_diff');
-    $urlPrevious = uri(array('item-id' => $this->doc->getId(), 
-                             'file-id' => $this->doc->getPageId(), 
-                             'namespace-index' => $this->namespaceIndex, 
-                             'old-revision-id' => $revision['parent_id'], 
-                             'revision-id' => $revision['revision_id']), 
-                       'scripto_diff');
-    $urlRevert = uri(array('item-id' => $this->doc->getId(), 
-                           'file-id' => $this->doc->getPageId(), 
-                           'namespace-index' => $this->namespaceIndex, 
-                           'revision-id' => $revision['revision_id']), 
-                     'scripto_revision');
-    ?>
-    <tr>
-        <td>(<?php if ($revision['revision_id'] != $this->info['last_revision_id']): ?><a href="<?php echo html_escape($urlCurrent); ?>">current</a><?php else: ?>current<?php endif; ?> | <?php if (0 != $revision['parent_id']): ?><a href="<?php echo html_escape($urlPrevious); ?>">previous</a><?php else: ?>previous<?php endif; ?>)</td>
-        <td><a href="<?php echo html_escape($urlRevert); ?>"><?php echo date('H:i:s M d, Y', strtotime($revision['timestamp'])); ?></a></td>
-        <td><?php echo $revision['user']; ?></td>
-        <td><?php echo $revision['size']; ?></td>
-        <td><?php echo ucfirst($revision['action']); ?></td>
-    </tr>
-    <?php endforeach; ?>
-    </tbody>
-</table>
+<?php if (!is_admin_theme()): ?>
+<h1><?php echo $head['title']; ?></h1>
 <?php endif; ?>
+<div id="primary">
+    <?php echo flash(); ?>
 
-</div><!-- #scripto-history -->
-<?php foot(); ?>
+    <div id="scripto-history" class="scripto">
+        <!-- navigation -->
+        <ul class="nav nav-tabs">
+        <?php if ($this->scripto->isLoggedIn()): ?>
+            <li><span><?php echo __('Logged in as %s', '<a href="' . html_escape(url('scripto')) . '">' . $this->scripto->getUserName() . '</a>'); ?></span></li>
+            <li><span>(<a href="<?php echo html_escape(url('scripto/index/logout')); ?>"><?php echo __('logout'); ?></a>)</span></li>
+            <li><a href="<?php echo html_escape(url('scripto/watchlist')); ?>"><?php echo __('Your watchlist'); ?></a> </li>
+        <?php else: ?>
+            <li><a href="<?php echo html_escape(url('scripto/index/login')); ?>"><?php echo __('Log in to Scripto'); ?></a></li>
+        <?php endif; ?>
+            <li><a href="<?php echo html_escape(url('scripto/recent-changes')); ?>"><?php echo __('Recent changes'); ?></a></li>
+            <li><a href="<?php echo html_escape(url(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id')); ?>"><?php echo __('View item'); ?></a></li>
+            <li><a href="<?php echo html_escape(url(array('controller' => 'files', 'action' => 'show', 'id' => $this->doc->getPageId()), 'id')); ?>"><?php echo __('View file'); ?></a></li>
+            <li><a href="<?php echo html_escape(url(array('action' => 'transcribe', 'item-id' => $this->doc->getId(), 'file-id' => $this->doc->getPageId()), 'scripto_action_item_file')); ?>"><?php echo __('Transcribe page'); ?></a></li>
+            <li class="active"><a href="<?php echo html_escape(url(array('item-id' => $this->doc->getId(), 'file-id' => $this->doc->getPageId(), 'namespace-index' => $this->namespaceIndex), 'scripto_history')); ?>"><?php echo __('View history'); ?></a></li>
+        </ul>
+
+        <h2><?php if ($this->doc->getTitle()): ?><?php echo $this->doc->getTitle(); ?><?php else: ?><?php echo __('Untitled Document'); ?><?php endif; ?></h2>
+        <h3><?php echo $this->doc->getPageName(); ?></h3>
+
+        <!-- page history -->
+        <?php if (empty($this->history)): ?>
+        <p><?php echo __('This page has not yet been created.'); ?></p>
+        <?php else: ?>
+        <table class="table table-condensed table-striped table-bordered">
+            <thead>
+            <tr>
+                <th><?php echo __('Compare Changes'); ?></th>
+                <th><?php echo __('Changed on'); ?></th>
+                <th><?php echo __('Changed by'); ?></th>
+                <th><?php echo __('Size (bytes)'); ?></th>
+                <th><?php echo __('Action'); ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($this->history as $revision): ?>
+            <?php
+            $urlCurrent = url(array('item-id' => $this->doc->getId(),
+                                    'file-id' => $this->doc->getPageId(),
+                                    'namespace-index' => $this->namespaceIndex,
+                                    'old-revision-id' => $revision['revision_id'],
+                                    'revision-id' => $this->info['last_revision_id']),
+                              'scripto_diff');
+            $urlPrevious = url(array('item-id' => $this->doc->getId(),
+                                     'file-id' => $this->doc->getPageId(),
+                                     'namespace-index' => $this->namespaceIndex,
+                                     'old-revision-id' => $revision['parent_id'],
+                                     'revision-id' => $revision['revision_id']),
+                               'scripto_diff');
+            $urlRevert = url(array('item-id' => $this->doc->getId(),
+                                   'file-id' => $this->doc->getPageId(),
+                                   'namespace-index' => $this->namespaceIndex,
+                                   'revision-id' => $revision['revision_id']),
+                             'scripto_revision');
+            ?>
+                <tr>
+                    <td>(<?php if ($revision['revision_id'] != $this->info['last_revision_id']): ?><a href="<?php echo html_escape($urlCurrent); ?>"><?php echo __('current'); ?></a><?php else: ?><?php echo __('current'); ?><?php endif; ?> | <?php if (0 != $revision['parent_id']): ?><a href="<?php echo html_escape($urlPrevious); ?>"><?php echo __('previous'); ?></a><?php else: ?><?php echo __('previous'); ?><?php endif; ?>)</td>
+                    <td><a href="<?php echo html_escape($urlRevert); ?>"><?php echo format_date(strtotime($revision['timestamp']), Zend_Date::DATETIME_MEDIUM); ?></a></td>
+                    <td><?php echo $revision['user']; ?></td>
+                    <td><?php echo $revision['size']; ?></td>
+                    <td><?php echo __($revision['action']); ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php endif; ?>
+    </div><!-- #scripto-history -->
 </div>
-
+<?php echo foot(); ?>

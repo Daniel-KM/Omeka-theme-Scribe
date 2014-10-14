@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .masthead {
     margin-bottom: 0px;
-    height: 100px; 
+    height: 100px;
     padding: 10;
     background-image: url(../images/background.gif);
 }
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #sublinks ul {  margin: 0; float: right; }
-        
+
 #sublinks a { color: #6A231F; font-size: .9em; font-weight: bold; }
 #content { background-color: #fff; padding: 10px 20px; margin-top: 20px; }
 h2 { color: #6A231F; }
@@ -277,7 +277,7 @@ h2 { color: #6A231F; }
 }
 
 #scripto-transcription-page-wikitext {
-    
+
 }
 
 .nav-btn {
@@ -333,7 +333,7 @@ td img {
 #primary {
     background-color: white;
     padding-left: 20px;
-    padding-right: 20px; 
+    padding-right: 20px;
 }
 
 .featured-collection {
@@ -347,7 +347,7 @@ td img {
 /* @override http://localhost/bxslider_v3_plugin/css/styles.css */
 
 /*
- * To change the color scheme of slider change each 
+ * To change the color scheme of slider change each
  * background property for each of the five styles below
  */
 
@@ -556,7 +556,7 @@ hr {
   color: #ffffff;
   text-align: center;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  
+
 }
 
 .breadcrumb {
@@ -577,3 +577,22 @@ hr {
     list-style-type:square;
 }
 
+.nav-tabs > li > span {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px 4px 0 0;
+    display: block;
+    line-height: 14px;
+    margin-right: 2px;
+    padding: 10px 12px;
+}
+.nav-tabs > li > span:hover {
+  border-bottom-color: transparent;
+  background-color: #eeeeee;
+  color: #555555;
+  cursor: default;
+  border: 1px solid #ddd;
+  border-color: #eeeeee #eeeeee #dddddd;
+}
+.nav-tabs > li > span:hover > a {
+    text-decoration:none;
+}

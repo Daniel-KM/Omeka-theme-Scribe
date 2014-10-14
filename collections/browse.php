@@ -1,35 +1,44 @@
 <?php
 $pageTitle = __('Browse Collections');
-head(array('title'=>$pageTitle,'bodyid'=>'collections','bodyclass' => 'browse'));
+echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 <div id="primary">
-    <h1><?php echo $pageTitle; ?></h1>
-    
-    <?php while (loop_collections()): ?>
-    <div class="collection">
+<h1><?php echo $pageTitle; ?></h1>
+<?php echo pagination_links(); ?>
 
-        <h2><?php echo link_to_collection(); ?></h2>
+<?php foreach (loop('collections') as $collection): ?>
 
-        <div class="element">
-            <h3><?php echo __('Description'); ?></h3>
-            <div class="element-text"><?php echo nls2p(collection('Description', array('snippet'=>150))); ?></div>
+<div class="collection">
+
+    <h2><?php echo link_to_collection(); ?></h2>
+
+    <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
+    <div class="element">
+        <h3><?php echo __('Description'); ?></h3>
+        <div class="element-text"><?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?></div>
+    </div>
+    <?php endif; ?>
+
+    <?php if ($collection->hasContributor()): ?>
+    <div class="element">
+        <h3><?php echo __('Contributors(s)'); ?></h3>
+        <div class="element-text">
+            <p><?php echo metadata('collection', array('Dublin Core', 'Contributor'), array('all'=>true, 'delimiter'=>', ')); ?></p>
         </div>
+    </div>
+    <?php endif; ?>
 
-        <?php if(collection_has_collectors()): ?>
-        <div class="element">
-            <h3><?php echo __('Collector(s)'); ?></h3>
-            <div class="element-text">
-                <p><?php echo collection('Collectors', array('delimiter'=>', ')); ?></p>
-            </div>
-        </div>
-        <?php endif; ?>
+    <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata('collection', array('Dublin Core', 'Title'))), array('collection' => metadata('collection', 'id'))); ?></p>
 
-        <p class="view-items-link"><?php echo link_to_browse_items(__('View the items in %s', collection('Name')), array('collection' => collection('id'))); ?></p>
+    <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
 
-        <?php echo plugin_append_to_collections_browse_each(); ?>
+</div><!-- end class="collection" -->
 
-    </div><!-- end class="collection" -->
-    <?php endwhile; ?>
+<?php endforeach; ?>
 
-<?php foot(); ?>
+<?php echo pagination_links(); ?>
+
+<?php fire_plugin_hook('public_collections_browse', array('collections'=>$collections, 'view' => $this)); ?>
+
+<?php echo foot(); ?>
 </div><!-- end primary -->
