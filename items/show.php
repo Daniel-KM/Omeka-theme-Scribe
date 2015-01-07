@@ -24,26 +24,7 @@ $collection = get_collection_for_item();
            // require_once APP_DIR . '/helpers/Media.php';
             $scripto = ScriptoPlugin::getScripto();
             // $helper = new Omeka_View_Helper_Media;
-            $files =  return_files_for_item(array());
-            $order = get_option('scripto_files_order');
-            switch ($order) {
-                case 'order':
-                    break;
-                case 'filename':
-                    usort($files, 'sortByOriginalFilename');
-                    break;
-                case 'id':
-                    usort($files, 'sortByFileId');
-                    break;
-            }
-            // Sort files by original filename.
-            function sortByOriginalFilename($a, $b) {
-                return strcasecmp($a['original_filename'], $b['original_filename']);
-            }
-            function sortByFileId($a, $b) {
-                return strcasecmp($a['id'], $b['id']);
-            }
-            ?>
+            $files =  return_files_for_item(array()); ?>
 
             <ul class="thumbnails">
             <?php foreach ($files as $file) :
@@ -67,9 +48,9 @@ $collection = get_collection_for_item();
                  $fileTitle = metadata($file, array('Dublin Core', 'Title'));
                  // Using monospaced font to make this work
                  if (strlen($fileTitle) <= 18) {
-                    $fileTitle .= '<br />';
+                    $fileTitle .= '<br /><br /><br />';
                  } elseif (strlen($fileTitle) <= 36 ) {
-                     $fileTitle .= '';
+                     $fileTitle .= '<br /><br />';
                  }
              ?>
                 <li class="span2">
