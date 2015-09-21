@@ -318,7 +318,7 @@ jQuery(document).ready(function() {
     <?php endif; // end canExport() ?>
 });
 </script>
-<<<<<<< HEAD
+
 
 <?php
     $page_id = $this->doc->getId();
@@ -332,12 +332,12 @@ jQuery(document).ready(function() {
 <?php if (!is_admin_theme()): ?>
 <h1><?php echo $head['title']; ?></h1>
 <?php endif; ?>
->>>>>>> 579a3a130c2bff13fc88965cebc9cc7737df5f57
+
 <div id="primary">
 <?php echo flash(); ?>
 
     <ul class="breadcrumb">
-<<<<<<< HEAD
+
         <li><a href="/<?php echo $base_dir; ?>">Home</a><span class="divider">/</span></li>
         <li><?php echo $collection_link; ?><span class="divider">/</span></li>
         <li><a href="<?php echo uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
@@ -347,7 +347,7 @@ jQuery(document).ready(function() {
         <li><a href="<?php echo url('collections'); ?>"></a></li>
         <li><a href="<?php echo url(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
         <li><?php echo metadata($file, array('Dublin Core', 'Title')); ?></li>
->>>>>>> 579a3a130c2bff13fc88965cebc9cc7737df5f57
+
     </ul>
     <div id="scripto-transcribe" class="scripto">
         <!-- navigation -->
