@@ -319,35 +319,26 @@ jQuery(document).ready(function() {
 });
 </script>
 
-
 <?php
     $page_id = $this->doc->getId();
-    set_current_item(get_item_by_id($page_id));
+    set_current_record('item',get_record_by_id('item', $page_id));
     $collection = get_collection_for_item();
     $collection_link = link_to_collection_for_item();
 ?>
 
-<?php $base_dir = basename(getcwd()); ?>
-=======
+<?php $base_Dir = basename(getcwd()); ?>
+
 <?php if (!is_admin_theme()): ?>
 <h1><?php echo $head['title']; ?></h1>
 <?php endif; ?>
-
 <div id="primary">
 <?php echo flash(); ?>
 
     <ul class="breadcrumb">
-
-        <li><a href="/<?php echo $base_dir; ?>">Home</a><span class="divider">/</span></li>
-        <li><?php echo $collection_link; ?><span class="divider">/</span></li>
-        <li><a href="<?php echo uri(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
-        <li><?php echo $this->fileMetadata($file, 'Dublin Core', 'Title'); ?></li>
-=======
         <li><a href="<?php echo WEB_ROOT; ?>">Home</a><span class="divider">/</span></li>
         <li><a href="<?php echo url('collections'); ?>"></a></li>
         <li><a href="<?php echo url(array('controller' => 'items', 'action' => 'show', 'id' => $this->doc->getId()), 'id'); ?>"><?php echo $this->doc->getTitle(); ?></a><span class="divider">/</span></li>
         <li><?php echo metadata($file, array('Dublin Core', 'Title')); ?></li>
-
     </ul>
     <div id="scripto-transcribe" class="scripto">
         <!-- navigation -->
