@@ -1,5 +1,6 @@
 <?php
 $titleArray = array(__('Scripto'), __('Transcribe Page'));
+queue_css_file('scripto-transcribe');
 $head = array('title' => html_escape(implode(' | ', $titleArray)));
 echo head($head);
 if (get_option('scripto_image_viewer') == 'openlayers') {
