@@ -71,7 +71,8 @@
                     <?php else: ?>
 
                     <li>
-                    <a href="<?php echo WEB_ROOT; ?>/scripto/login"><strong>Sign in or register</strong></a>
+                    <a href="<?php echo WEB_ROOT; ?>/scripto/login"><strong>Sign in</strong></a>
+                    <a href="<?php echo WEB_ROOT; ?>/scripto/register"><strong>Register</strong></a>
                     </li>
 
                     <?php endif; ?>
