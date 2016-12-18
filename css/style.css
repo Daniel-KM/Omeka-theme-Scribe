@@ -276,10 +276,13 @@ h2 { color: #6A231F; }
     cursor: hand;
 }
 
+#scripto-talk-page-wikitext,
 #scripto-transcription-page-wikitext {
-
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
 }
-
 .nav-btn {
     margin-top: 5px;
 }

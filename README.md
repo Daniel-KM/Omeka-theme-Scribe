@@ -122,7 +122,7 @@ Copyright
 
 
 [Omeka]: https://omeka.org
-[From Scratch]: http://omeka.org/add-ons/themes/from-scratch/
+[From Scratch]: https://omeka.org/add-ons/themes/from-scratch/
 [Scripto]: https://github.com/ui-libraries/plugin-Scripto
 [DIYHistory code]: http://diyhistory.lib.uiowa.edu/code.html
 [bxSlider]: http://bxslider.com/
